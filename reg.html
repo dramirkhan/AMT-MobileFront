@@ -1,0 +1,240 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link href="css/mui.min.css" rel="stylesheet" />
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+ <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+ <h1 class="mui-title">register</h1>
+</header>
+<div class="mui-content">
+ <div style="padding:15px 0px;">
+  <form id='login-form' class="mui-input-group">
+   <div class="mui-input-row">
+    <label>name</label>
+    <input id='name' type="text" class="mui-input-clear mui-input" placeholder="please enter account name">
+   </div>
+   <div class="mui-input-row">
+    <label>email</label>
+    <input id='email' type="text" class="mui-input-clear mui-input" placeholder="The email is most important!r">
+   </div>
+   <div class="mui-input-row">
+    <label>password</label>
+    <input id='password' type="password" class="mui-input-clear mui-input" placeholder="please enter key">
+   </div>
+   <div class="mui-input-row">
+    <label>confirm</label>
+    <input id='confirmPassword' type="password" class="mui-input-clear mui-input" placeholder="Confirm your key again!">
+   </div>
+  </form>
+ </div>
+ <div class="mui-content-padded">
+  <button id='regBtn' class="mui-btn mui-btn-primary" style="width:100%; height:40px;">register</button>
+  <div style="padding:15px 0px; font-size:14px; text-align:center;">
+   <a id='login'>back to login</a>
+  </div>
+ </div>
+</div>
+	
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript">
+	mui.init();
+	// check if already log in  else we need sign up frist so get the reg! // 下面是注册功能点击
+
+		
+
+	// 下面是检查用户名密码交互
+	document.getElementById('regBtn').addEventListener('tap',function(){
+		var name = document.getElementById('name').value;
+		var email = document.getElementById('email').value;
+		var password = document.getElementById('password').value;    // 先得到dom值 然后和后台交互
+		var confirmPassword = document.getElementById('confirmPassword').value; 
+		if (name.length < 5) {
+			
+			mui.toast('your account should be longer than 5');
+			return false;
+		}       
+		if (password.length<6){
+			mui.toast('your keyword should be longer than 6 digit');
+			return false;
+		}
+		if (password!=confirmPassword){
+			mui.toast('please make sure the passwords are same!')
+			return false;
+		}
+		if (email.indexOf("@") == -1 || email.indexOf("@") == 0 || email.indexOf("@") == email.length-1   ){
+			mui.toast('please make sure your email address is valid');
+			return false;
+		}
+		
+		
+		
+		
+	
+	console.log(name+'---'+ email+'---'+password+'---'+confirmPassword);
+	
+	mui.ajax('http://13.59.129.23:8080/amt-news/account', {
+                        
+                        data: {
+							"name" : name,
+							"email" : email,
+							"password" : password,
+							"confirmPassword" : confirmPassword,
+							"timeZone" : "US/Central"              
+                        },
+                        //dataType: 'json',
+                        /* 如果后台返回的响应内容的类型是'application/json'时,可不用指定dataType为json,
+                         * 不指定系统会根据后台响应的mime类型来得到相应的数据格式,如果此时设置为'json'反
+                         * 而会出错。
+                         * 如果后台返回的响应内容的类型是'text/plain'时,此时dataType指定为'json'时,mui
+                         * 会自动将返回的符合json格式的json字符串转换为json对象。
+                         */
+                        type: 'post',//请求方式,一般情况get和post都可以
+                        timeout: 10000,//10秒超时
+                        //success表示请求成功,返回的响应状态码为200时
+						headers:{'Content-Type':'application/json'},	              
+
+                        success: function(data) {
+							console.log(data);
+							 //注册成功记录关键值同时完成登录
+							 //plus.storage.setItem('suid', res.data.u_id+'');
+							 //plus.storage.setItem('srand', res.data.u_randnum+'');     // 放在本地存储内 用户数据id
+							 mui.toast('register successfully ^_^');
+							 //延迟2秒关闭注册和登录界面
+							 setTimeout(function(){
+							  plus.webview.getWebviewById('login').close();
+							  plus.webview.getWebviewById('reg').close();
+							 }, 2000);
+							},
+                        /*
+                        *xhr：xhr实例对象
+                        *type：错误描述，可取值："timeout", "error", "abort", "parsererror"、"null"
+                        *errorThrown：可捕获的异常对象
+                        */
+                        error: function(xhr, type, errorThrown) {
+                            mui.toast("The server has error!");
+							mui.toast("The server has error!Please make sure your email addres is valid !!");
+							console.log(JSON.stringify(xhr.errors));
+                            console.log('error:' + type);
+                        }
+                    });
+                    /*mui.get(url,callback(data))或mui.post(url,callback(data))是ajax的简化版
+                     * 如果要设置超时，或处理异常时，必须用mui.ajax()
+                     */
+	
+	
+	
+	
+/*
+	mui.post(
+ 	//apiUrl+'members&m=login&type=1',
+	'http://13.59.129.23:8080/amt-news/account',
+//	{username : username, password : pwd},
+	
+	{  name : "amt3",
+	email : "amt3@test.com",
+	password : "test123",
+	confirmPassword : "test123",
+	timeZone : "US/Central"},
+	function(res){
+	console.log('sasasa');
+	if(res.status == 'ok'){
+	//注册成功记录关键值同时完成登录
+	plus.storage.setItem('suid', res.data.u_id+'');
+	plus.storage.setItem('srand', res.data.u_randnum+'');
+	mui.toast('welcome ^_^');
+	//延迟2秒登录界面
+	setTimeout(function(){
+	 plus.webview.getWebviewById('login').close();
+	}, 2000);
+	}else{
+	    console.log(JSON.stringify(res));	
+		
+		
+		if(res.data=='用户不存在') { 
+			mui.toast('the username is not in our database'); 
+			return false;
+			}
+		if(res.data=='密码错误!') {
+			mui.toast('Your keyword is wrong!');  
+			return false;
+			}
+		if(res.data=='密码错误次数过多'){
+			mui.toast('you have entered too much wrong key!'); 
+			return false;
+		}
+		
+		mui.toast(res.data);
+	
+	}
+	},
+	'json'
+	);	 
+	*/
+	});
+	
+	
+	
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>  
+	
+	
+	
+	
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</body>
+</html>

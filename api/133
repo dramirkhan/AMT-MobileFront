@@ -1,0 +1,1020 @@
+# GET : /news/sources
+[
+  {
+    "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+    "source": "Times of India",
+    "shortCode": "TOI",
+    "isActive": true
+  },
+  {
+    "id": "5b97c800-6912-42e4-838e-ae4b5e88c3ff",
+    "source": "Hindustan Times",
+    "shortCode": "HT",
+    "isActive": true
+  }
+]
+
+
+# GET : /news/categories
+[
+  {
+    "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+    "category": "Education",
+    "isActive": true
+  },
+  {
+    "id": "23aca6d4-b740-47c4-b30b-8f16ef8bdeff",
+    "source": "Islamic",
+    "isActive": true
+  }
+]
+
+
+# GET : /news
+{
+  "page": 1,
+  "pageSize": 100,
+  "totalCount": 500000,
+  "list" : [
+    {
+      "id": "8268ad87-d9f1-426f-80e4-ebbf8ec94bb0",
+      "headline": "IIT Kharagpur to sponsor undergraduate research program",
+      "fullNews": "KOLKATA: In a bid to nurture the spirit of research and innovation among undergraduate students, Indian Institute of Technology (IIT) Kharagpur will launch a sponsored research program from the upcoming Autumn semester of 2019-20, an official said on Wednesday.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/iit-kharagpur-to-sponsor-undergraduate-research-program/articleshow/69857978.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69858003,imgsize-116043,width-400,resizemode-4/69858003.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 7:51 PM EST",
+      "updatedDate": "June 18, 2019 7:51 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:01 PM EST",
+    },
+    {
+      "id": "9df5d3f6-cd95-4220-9791-431b0ea4f24c",
+      "headline": "OJEE Result 2019: Odisha Joint Entrance Examination results announced",
+      "fullNews": "BHUBANESWAR: The results of Odisha Joint Entrance Examination (OJEE), 2019 held both in online and offline, were announced here Wednesday. While Pradeep Kumar Kampa has topped the test in MBA, Smitarani Choudhury ranked number one in MCA course. Swikruti Mohapatra has topped in Integrated MBA.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/ojee-2019-results-odisha-joint-entrance-examination-results-announced/articleshow/69857920.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69857950,imgsize-24920,width-400,resizemode-4/69857950.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 7:52 PM EST",
+      "updatedDate": "June 18, 2019 7:52 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:02 PM EST",
+    },
+    {
+      "id": "54b2af87-a68b-4536-8e74-f4ebf61da62a",
+      "headline": "QS World University Rankings 2020: Jindal Global University youngest in India to enter the list",
+      "fullNews": "NEW DELHI: O.P. Jindal Global University (JGU) has said that it's the youngest university to have found a place in the 2020 Quacquarelli Symonds (QS) World University Rankings, which were declared on Wednesday in London. The decade-old university has been placed among the top 2.67 per cent of all universities globally.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/qs-world-university-rankings-2020-jindal-global-university-youngest-in-india-to-enter-the-list/articleshow/69857810.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69857898,imgsize-25558,width-400,resizemode-4/69857898.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 7:53 PM EST",
+      "updatedDate": "June 18, 2019 7:53 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:03 PM EST",
+    },
+    {
+      "id": "ce484153-ff42-46e4-a48e-afe0b4b13bac",
+      "headline": "Medical education experts from Ukraine and Russia to hold seminar in Chandigarh on June 20",
+      "fullNews": "CHANDIGARH: To generate awareness among the student community about MBBS study in Ukraine and Russia a 'MBBS Abroad Seminar' will be held in Shivalik View in sector 17 Chandigarh on June 20, 2019 from 11 am to 6 pm and on the spot admission letter to students meeting the criteria will be issued by the University by the delegates.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/medical-education-experts-from-ukraine-and-russia-to-hold-seminar-in-chandigarh-on-june-20/articleshow/69854333.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69854330,imgsize-206017,width-400,resizemode-4/69854330.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 7:54 PM EST",
+      "updatedDate": "June 18, 2019 7:54 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:04 PM EST",
+    },
+    {
+      "id": "7f89d390-8ab0-4684-b1e8-18a5caa1245e",
+      "headline": "IIT-M researchers study new methods to extract methane from ice-like cages",
+      "fullNews": "Indian Institute of Technology Madras (IITM) researchers are developing new techniques for extracting methane from natural gas hydrates. Gas hydrates are ice-like cages, found in Indian continental coastline, in which methane gas is trapped.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/iit-m-researchers-study-new-methods-to-extract-methane-from-ice-like-cages/articleshow/69854275.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69854256,imgsize-103281,width-400,resizemode-4/69854256.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 7:55 PM EST",
+      "updatedDate": "June 18, 2019 7:55 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:05 PM EST",
+    },
+    {
+      "id": "b3cb9c67-2c3b-4ba5-8f50-b988ab046bac",
+      "headline": "KU professor appointed as director of CSIR-NISTAD",
+      "fullNews": "KURUKSHETRA: The Kurukshetra University (KU) officials informed that the Prime Minister has appointed Prof Ranjana Aggarwal as the new Director of Council of Scientific and Industrial Research - National Institute of Science Technology and Development Studies (CSIR-NISTADS), New Delhi.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/csir-nistads-pm-appoints-ku-professor-as-director/articleshow/69853826.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69853927,imgsize-6487,width-400,resizemode-4/69853927.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 7:56 PM EST",
+      "updatedDate": "June 18, 2019 7:56 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:06 PM EST",
+    },
+    {
+      "id": "36ab7cd8-0f8d-41a2-8d16-dbbe5d86b47b",
+      "headline": "Allahabad University students gets 5 lakh insurance cover for Rs 77 ",
+      "fullNews": "ALLAHABAD: Finally after a wait of Six long years, authorities of Allahabad University gave its node to implement the accidental and health scheme for the students pursuing different courses on its campus.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/allahabad-university-students-gets-5-lakh-insurance-cover-for-rs-77-per-annum/articleshow/69853553.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69853646,imgsize-11415,width-400,resizemode-4/69853646.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 7:57 PM EST",
+      "updatedDate": "June 18, 2019 7:57 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:07 PM EST",
+    },
+    {
+      "id": "86b85729-f11e-46aa-9fe0-c7434ebb1297",
+      "headline": "Kerala Polytechnic allotment 2019: Provisional rank list & trial ",
+      "fullNews": "NEW DELHI: Department of Technical Education, Kerala has released the provisional rank list and trial allotment for Polytechnic college admission on its official website today i.e., June 19, 2019.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/kerala-polytechnic-allotment-2019-provisional-rank-list-trial-allotment-released-at-polyadmission-org/articleshow/69852588.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69852604,imgsize-65681,width-400,resizemode-4/69852604.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 7:58 PM EST",
+      "updatedDate": "June 18, 2019 7:58 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:08 PM EST",
+    },
+    {
+      "id": "44f078ea-5bbe-4ce6-95a9-a85fb9c0fbaf",
+      "headline": "ITBP result 2019 declared for Constable Telcom exam at ",
+      "fullNews": "NEW DELHI: The Indo Tibetan Border Police Force (ITBP) has declared the result of ITBP Constable (Telcom) recruitment exam 2019 on its official website today.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/itbp-result-2019-declared-for-constable-telcom-exam-at-recruitment-itbpolice-nic-in/articleshow/69852173.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69852174,imgsize-72580,width-400,resizemode-4/69852174.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 7:59 PM EST",
+      "updatedDate": "June 18, 2019 7:59 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:09 PM EST",
+    },
+    {
+      "id": "11caafa8-b24b-4302-973d-cd2aed86303a",
+      "headline": "NEET Counselling 2019 begins today at mcc.nic.in",
+      "fullNews": "NEW DELHI: Medical counselling Committee (MCC) begins the online counselling for NEET 2019 admission 15% All India Quota/Deemed/Central universities/ESIC & AFMC (MBBS/BDS) seats from today i.e., June 19, 2019.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/neet-counselling-2019-begins-today-at-mcc-nic-in-check-the-complete-schedule-here/articleshow/69851999.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69851949,imgsize-14013,width-400,resizemode-4/69851949.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:10 PM EST",
+      "updatedDate": "June 18, 2019 8:10 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:10 PM EST",
+    },
+    {
+      "id": "c46e96cc-1431-443c-af44-114fa4429d36",
+      "headline": "RSOS 10th Result: Rajasthan Open school class 10 result 2019 not ",
+      "fullNews": "NEW DELHI: The Rajasthan State Open School (RSOS) will not declare the Class 10 result today. Candidates who appeared for the March-May 2019 examination, can check their result from the RSOS official website - education.rajasthan.gov.in/rsos.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/rsos-10th-result-rajasthan-open-school-class-10-result-2019-likely-to-be-declared-today/articleshow/69819470.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69819462,imgsize-76840,width-400,resizemode-4/69819462.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:11 PM EST",
+      "updatedDate": "June 18, 2019 8:11 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:11 PM EST",
+    },
+    {
+      "id": "81683c8f-5a3d-4091-aa4a-ac390046fc44",
+      "headline": "CBSE 10th & 12th compartment exams 2019: Admit cards ",
+      "fullNews": "NEW DELHI: The Central Board of Secondary Education (CBSE) has released the online admit card for private candidate for compartment examinations 2019. The admit cards were released on the official website of the CBSE Board - http://cbse.nic.in/",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/cbse-10th-12th-compartment-exams-2019-online-admit-cards-released-for-private-candidates-heres-direct-link/articleshow/69842974.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69842975,imgsize-130166,width-400,resizemode-4/69842975.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:12 PM EST",
+      "updatedDate": "June 18, 2019 8:12 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:12 PM EST",
+    },
+    {
+      "id": "861384c4-6ada-4b0b-acee-2fed43744d8d",
+      "headline": "NEST 2019 results announced at nestexam.in",
+      "fullNews": "NEW DELHI: The National Entrance Screening Test (NEST) result 2019 was announced today on the official website of the exam. The result was to be declared on Monday i.e., June 17, 2019. However, due to some technical reasons NEST 2019 result declaration date had been postponed.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/nest-2019-results-to-be-declared-today-at-nestexam-in/articleshow/69824313.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69824440,imgsize-118889,width-400,resizemode-4/69824440.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:13 PM EST",
+      "updatedDate": "June 18, 2019 8:13 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:13 PM EST",
+    },
+    {
+      "id": "7104346b-9617-4e58-913c-8e33f36a9b5c",
+      "headline": "IBPS RRB Recruitment 2019: Application begins @ ibps.in; check ",
+      "fullNews": "NEW DELHI: The Institute of Banking Personnel Selection (IBPS) has released the notification for IBPS RRB 2019 on its official website. According to that notification, the IBPS RRB PO 2019 Preliminary Exam would be conducted on August 3, 4 & 11, 2019 while the mains exam would be conducted on September 22, 2019. ",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/ibps-rrb-notification-2019-released-check-details-here/articleshow/69792309.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69792393,imgsize-244378,width-400,resizemode-4/69792393.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:14 PM EST",
+      "updatedDate": "June 18, 2019 8:14 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:14 PM EST",
+    },
+    {
+      "id": "a4e7287f-08d1-4127-b6c9-4caf2c9daae9",
+      "headline": "Maharashtra Class 11 Admissions 2019: Govt to hike no. of seats for Arts",
+      "fullNews": "MUMBAI: Under flak for scrapping internal assessment marks for class 10 students, which was said to be the main reason behind a dip in SSC pass percentage this year, the Maharashtra government Tuesday announced that it would augment the number of overall seats for class 11 admissions.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/maharashtra-class-11-admissions-2019-govt-to-hike-no-of-seats-for-arts-commerce-science-streams/articleshow/69841652.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69841709,imgsize-105387,width-400,resizemode-4/69841709.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:15 PM EST",
+      "updatedDate": "June 18, 2019 8:15 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:15 PM EST",
+    },
+    {
+      "id": "de32a4a6-b85f-4f1d-8f86-e615e1339297",
+      "headline": "How to choose the right law school?",
+      "fullNews": "Investing in a good legal education requires students to take into account location, faculty profile and multidisciplinary environment of the law school, writes VC Vivekanandan With the CLAT scores released recently, the apprehension levels are high among the law school aspirants. They would soon have to choose their next five-year institution to incubate their legal career. The large number of CLAT and LSAT takers point to an increasing interest among aspirants to acquire a legal education. Yet the moot point is, whether all law schools are in the same league. The answer is not in the affirmative. In the run up to the admission season, one can come across a new law school advertisement every day. In this context, one can identify a minimum of six parameters to be explored in choosing a law school. In the first place, it is the ‘location’ of the school that counts. For the legal aspirants, the ‘Lab’ is outside the school. With the compulsory credit course of internship, they also need to move around to participate in moot courts, seminars, conferences etc.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/how-to-choose-the-right-law-school/articleshow/69837730.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69837762,imgsize-142821,width-400,resizemode-4/69837762.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:16 PM EST",
+      "updatedDate": "June 18, 2019 8:16 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:16 PM EST",
+    },
+    {
+      "id": "a764e374-14bf-4397-b127-8a5a7f439ee2",
+      "headline": "St. Xavier's releases first merit list for BMM programme 2019",
+      "fullNews": "NEW DELHI: St. Xavier's College (Autonomous), Mumbai has released the first merit list for Bachelor in Mass Media (BMM) programme. Candidates whose names appeared on the first merit list can apply for the admission. For BMM admission, candidates need to fill in the College Admission Form available in the XIMR, 2nd floor (above canteen). ",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/st-xaviers-releases-first-merit-list-for-bmm-programme-2019-check-cutoff-here/articleshow/69837257.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69837386,imgsize-348758,width-400,resizemode-4/69837386.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:17 PM EST",
+      "updatedDate": "June 18, 2019 8:17 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:17 PM EST",
+    },
+    {
+      "id": "c02e43d5-547e-4cba-86b6-06d770fec879",
+      "headline": "IBPS RRB 2019 application link activated @ ibps.in, apply here",
+      "fullNews": "NEW DELHI: The Institute of Banking Personnel Selection (IBPS) has activated the application links for the recruitment of Group "B"-Office Assistant (Multipurpose), Group "A"- Officers (Scale-I) and Group "A"- Officers (Scale-II & III). ",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/ibps-rrb-2019-application-form-link-activated-ibps-in-apply-here/articleshow/69836419.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69836525,imgsize-155357,width-400,resizemode-4/69836525.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:18 PM EST",
+      "updatedDate": "June 18, 2019 8:18 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:18 PM EST",
+    },
+    {
+      "id": "eb5e2c12-4e10-4394-9871-e3ddf5c41c51",
+      "headline": "ICAR AIEEA admit card 2019 released @ntaicar.nic.in",
+      "fullNews": "NEW DELHI: The National Testing Agency (NTA) has released Admit Card for AIEEA (UG)-2019, for AIEEA (PG)-2019 and AICE- JRF/SRF (PGS)-2019 on its official website. The NTA will conduct the ICAR AIEEA 2019 entrance exam from 09:30 a.m. to 12:00 noon on July 1, 2019. The result will likely be declared on July 17, 2019. ",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/icar-aieea-admit-card-2019-released-ntaicar-nic-in/articleshow/69836005.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69836042,imgsize-184840,width-400,resizemode-4/69836042.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:19 PM EST",
+      "updatedDate": "June 18, 2019 8:19 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:19 PM EST",
+    },
+    {
+      "id": "",
+      "headline": "",
+      "fullNews": "",
+      "link": "",
+      "bannerImage": "",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:20 PM EST",
+      "updatedDate": "June 18, 2019 8:20 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:20 PM EST",
+    },
+    {
+      "id": "1f224667-6e77-48b4-9f3f-f26890009f83",
+      "headline": "SEC Railway invites online applications for 432 apprentice posts",
+      "fullNews": "NEW DELHI: The South Eastern Central Railway has invited applications from the ITI, 10th & 12th pass candidates for 432 Trade Apprentice posts. The selected candidates will be appointed in South Eastern Central Railway's Bilaspur, Chhattisgarh division.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/sec-railway-invites-online-applications-for-432-apprentice-posts/articleshow/69835462.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69835510,imgsize-126781,width-400,resizemode-4/69835510.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:21 PM EST",
+      "updatedDate": "June 18, 2019 8:21 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:21 PM EST",
+    },
+    {
+      "id": "89c6dba5-8855-4935-8adf-2f66d8678230",
+      "headline": "Haryana claims 86% students Saksham or grade level competent",
+      "fullNews": "CHANDIGARH: The Saksham Haryana, a state-wide educational transformation program being implemented in the state for the last five years has started yielding positive results as 86 per cent students in the state are now Saksham or grade level competent. Stating this, Project Director, Chief Minister's Good Governance Associates (CMGGA) Programme, Dr Rakesh Gupta said that 13 more blocks have been announced Saksham taking the total number of such blocks to 107 after eight rounds of assessment. He said that 14 districts in the State are 100 per cent Saksham after eight rounds of assessment over 18 months.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/haryana-claims-86-students-saksham-or-grade-level-competent/articleshow/69835243.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69835233,imgsize-186833,width-400,resizemode-4/69835233.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:22 PM EST",
+      "updatedDate": "June 18, 2019 8:22 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:22 PM EST",
+    },
+    {
+      "id": "0bb54be3-11e8-46fc-b997-c0763b5c85b2",
+      "headline": "Question paper opened in error- CU postpones MCom exam",
+      "fullNews": "KOZHIKODE: Calicut University has postponed the fourth semester M.Com examination scheduled to be held on June 19 after the question paper packet was mistakenly opened in a college in Palakkad district. The varsity had earlier postponed the Strategic Financial Management paper of the M.Com exam which was originally scheduled to be held on June 14 to June 19 and had sent the revised timetable to the colleges.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/question-paper-opened-in-error-cu-postpones-mcom-exam/articleshow/69835210.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69835203,imgsize-144471,width-400,resizemode-4/69835203.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:23 PM EST",
+      "updatedDate": "June 18, 2019 8:23 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:23 PM EST",
+    },
+    {
+      "id": "dc73ddde-adc5-44fb-bcc9-9442ca3edf81",
+      "headline": "Take up university social responsibility: OU chancellor during 80th ",
+      "fullNews": "HYDERABAD: Taking cue from the University of Hyderabad, the Osmania University (OU) should start university social responsibility by educating children of under-privileged sections in English and computers, said ESL Narasimhan, governor of Telangana and Andhra Pradesh while addressing its 80th convocation ceremony on Monday.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/take-up-university-social-responsibility-ou-chancellor-during-80th-convocation/articleshow/69828853.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69828854,imgsize-1275775,width-400,resizemode-4/69828854.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:24 PM EST",
+      "updatedDate": "June 18, 2019 8:24 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:24 PM EST",
+    },
+    {
+      "id": "b28d9b3c-c2bc-4989-abbb-6bdc83852d98",
+      "headline": "MAH LLB (3 years) CET 2019 result released at info.mahacet.org; check ",
+      "fullNews": "NEW DELHI: State Common Entrance Test Cell, Maharashtra has declared the result of MAH- LLB (3 years) CET-2019 results on its official website today, i.e., June 17, 2019. The candidates who have appeared for the MAH LLB (3 years) CET 2019 can visit the official website of MAH- info.mahacet.org- to check and download their result.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/mah-llb-3-years-cet-2019-result-released-at-info-mahacet-org-check-here/articleshow/69828169.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69828178,imgsize-10658,width-400,resizemode-4/69828178.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:25 PM EST",
+      "updatedDate": "June 18, 2019 8:25 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:25 PM EST",
+    },
+    {
+      "id": "c8b854c8-0f32-4555-9166-c6fe410ba857",
+      "headline": "AISSMS Pune organises faculty development programme",
+      "fullNews": "PUNE: The All India Shree Shivaji Military Society’s (AISSMS) College of engineering, Pune organised a one week faculty development programme (FDP) between June 10 and 15. The FDP was approved by Indian Institute of Technology (ISTE) Delhi. The theme of FDP was related to quality improvement of institute on including framing, mapping, assessment and attainment in the college.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/aissms-pune-organises-faculty-development-programme/articleshow/69826643.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69826644,imgsize-145273,width-400,resizemode-4/69826644.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:26 PM EST",
+      "updatedDate": "June 18, 2019 8:26 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:26 PM EST",
+    },
+    {
+      "id": "30004bdf-ebac-4e61-a25d-0a7e348bbba8",
+      "headline": "UPHOLDING SMART INNOVATION IN EDUCATIONAL ",
+      "fullNews": "Despite all his hard work and sincerity through his publishing career spanning over two and a half decades, Mr. Abhiramaswamy, Managing Director, Cambridge Publishing Company Pvt Ltd, has never hankered for fame, recognition or awards.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/upholding-smart-innovation-in-educational-publishing/articleshow/69826438.cms",
+      "bannerImage": "https://static.toiimg.com/img/69826435/Master.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:27 PM EST",
+      "updatedDate": "June 18, 2019 8:27 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:27 PM EST",
+    },
+    {
+      "id": "21b58a40-6b03-4530-9ad0-5adf33f12115",
+      "headline": "Virtual classroom launched to prepare for IELTS on the go",
+      "fullNews": "Keeping up with the approach of online learning and enabling candidates from every nook of India to receive quality training for clearing the International English Language Testing System (IELTS) exam, British Council has launched a virtual classroom.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/virtual-classroom-launched-to-prepare-for-ielts-on-the-go/articleshow/69824572.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69824525,imgsize-131509,width-400,resizemode-4/69824525.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:28 PM EST",
+      "updatedDate": "June 18, 2019 8:28 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:28 PM EST",
+    },
+    {
+      "id": "04028575-b6eb-4926-8325-8dbb41221a58",
+      "headline": "Should Yoga be made a compulsory subject in schools and colleges",
+      "fullNews": "AYUSH minister has recently sent a proposal to MHRD to make Yoga a compulsory subject in schools and colleges. Here is how stakeholders react to the issue . Children must be taught Yoga Yoga is a wonderful gift for all. It is especially beautiful if yoga is incorporated into the lives of young children, be it in schools, colleges or even in the comfort of their own home. It gives the perfect building blocks for a healthy, happy and fulfilling life. From time immemorial, the knowledge of yoga was imparted to young pupils in India. The same is possible now with just a few changes in the way we impart this knowledge to youngsters. Children are now highly evolved and have easy access to technology and gadgets. The time has come when we as nurturers and caregivers must reach out to them in a manner that excites them. If we become innovative with the teaching of Yoga, surely, the students of schools and institutes will benefit.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/should-yoga-be-made-a-compulsory-subject-in-schools-and-colleges/articleshow/69824472.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69824464,imgsize-130979,width-400,resizemode-4/69824464.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:29 PM EST",
+      "updatedDate": "June 18, 2019 8:29 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:29 PM EST",
+    },
+    {
+      "id": "c1f4b6f2-370d-41e7-9f8a-394cf17799bb",
+      "headline": "SOL eyeing students from outside Delhi",
+      "fullNews": "The online courses introduced by DU's School of Open Learning in 2019-20 will enable outstation students to enrol in various programmes Delhi University's School of Open Learning (SOL) is aiming at increasing the gross enrolment ratio (GER) from 24% to 30%. For this, the university is planning to increase its reach to students outside Delhi through online courses. Currently, most students enrolling in SOL are from Delhi, but the authorities want to enrol students from the rest of India, particularly from tier II and tier III cities.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/sol-eyeing-students-from-outside-delhi/articleshow/69824355.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69824345,imgsize-115383,width-400,resizemode-4/69824345.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:30 PM EST",
+      "updatedDate": "June 18, 2019 8:30 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:30 PM EST",
+    },
+    {
+      "id": "64e4afe9-4694-476a-a169-5d0cdc20db6f",
+      "headline": "How to choose a new-age media school?",
+      "fullNews": "When you search for media schools on internet, it will show you thousands of options. But with so many media schools available across the country and abroad, selecting the right one becomes difficult. Here are some of the points that you should consider to find out the right media school for higher studies:",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/how-to-choose-a-new-age-media-school/articleshow/69824223.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69824295,imgsize-105508,width-400,resizemode-4/69824295.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:31 PM EST",
+      "updatedDate": "June 18, 2019 8:31 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:31 PM EST",
+    },
+    {
+      "id": "5aea2797-1e1c-4ea1-9097-e35beabd2af9",
+      "headline": "Here is what you need to know about studying medicine in Russia",
+      "fullNews": "Aspirants need at least qualifying marks in NEET exams to enter the Russian Medical Universities, reports With the declaration of National Eligibility cum Entrance Test (NEET) results, many students are aspiring to study in the universities in Russia. At the recently organised counselling session in New Delhi, aspirants tried to clear their queries on the application and admission process of various universities. Many students were curious to know about the eligibility criteria needed to take admission. Counsellors informed that they will need at least qualifying marks in NEET exams to enter the Russian University.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/here-is-what-you-need-to-know-about-studying-medicine-in-russia/articleshow/69823808.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69823801,imgsize-204383,width-400,resizemode-4/69823801.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:32 PM EST",
+      "updatedDate": "June 18, 2019 8:32 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:32 PM EST",
+    },
+    {
+      "id": "ec85cac4-fd55-470b-8fe6-dc305427ca81",
+      "headline": "Mumbai University first merit list for degree courses releasing today, ",
+      "fullNews": "MUMBAI: Over 7.8 lakh applications have been made by 2.6 lakh students for first year degree colleges at Mumbai University this year. The first merit list will be announced by colleges in the city at 5 pm on Monday and top colleges may remain out of reach for HSC students, feel principals.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/first-merit-list-for-degree-courses-to-be-out-today-7-8-lakh-applications-by-2-6-lakh-students/articleshow/69819509.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69819601,imgsize-536247,width-400,resizemode-4/69819601.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:33 PM EST",
+      "updatedDate": "June 18, 2019 8:33 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:33 PM EST",
+    },
+    {
+      "id": "4d562f97-1cfb-40af-acf0-5b19d6cdd797",
+      "headline": "Number of Indian students going to the US continues to surge",
+      "fullNews": "One of the key reasons behind the rise is the option given by the US varsities to switch majors more than once With US universities having a flexible course curriculum that offers students the opportunity to change streams multiple times, the country continues to be a preferred destination for Indian students to study abroad.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/number-of-indian-students-going-to-the-us-continues-to-surge/articleshow/69823642.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69823635,imgsize-154143,width-400,resizemode-4/69823635.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:34 PM EST",
+      "updatedDate": "June 18, 2019 8:34 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:34 PM EST",
+    },
+    {
+      "id": "b11f8a0b-612e-4edc-9e3b-ecbb19e9a9b1",
+      "headline": "Mumbai University releases first merit list 2019; check details here",
+      "fullNews": "NEW DELHI: Mumbai University has released the first merit list for the first year degree admission on respective college websites today, i.e., June 17, 2019. The candidates who have applied for the Mumbai University admission can visit the official website of respective college website. ",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/mumbai-university-first-merit-list-2019-to-be-released-today-check-details-here/articleshow/69823540.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69823588,imgsize-77550,width-400,resizemode-4/69823588.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:35 PM EST",
+      "updatedDate": "June 18, 2019 8:35 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:35 PM EST",
+    },
+    {
+      "id": "d86ba863-736b-4212-b2e8-3652b1b5b9d0",
+      "headline": "JEE Advanced topper idolises mathematician Srinivas Ramanujan",
+      "fullNews": "Maharashtra boy Kartikey Gupta had refrained from movies and outdoor games in order to focus on JEE preparation For small-town boy Kartikey Gupta, who hails from Ballarpur town near Nagpur, the inherent love for Mathematics prompted him to pursue the dream of joining an IIT. After securing 18th position in Joint Entrance Exam (JEE) Main, he emerged as the all India topper with 346 marks in JEE Advanced 2019. "Since my childhood, Math as a subject has always been my favourite and I idolise Srinivas Ramanujan. My decision to start preparing for IIT entrance exam was based solely on my love for the subject. It was much later that I got interested in other subjects such as Physics and Chemistry," says the 17-year-old.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/jee-advanced-topper-idolises-mathematician-srinivas-ramanujan/articleshow/69823433.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69823430,imgsize-88501,width-400,resizemode-4/69823430.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:36 PM EST",
+      "updatedDate": "June 18, 2019 8:36 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:36 PM EST",
+    },
+    {
+      "id": "8818e111-1259-452a-87b2-f3226baa9ee6",
+      "headline": "Fulfilling the IIT dream without JEE or GATE",
+      "fullNews": "Students from different institutes can spend a semester at IITGN through this programme Studying in an IIT is a dream for thousands of students, but only a few are able to make it due to tough competition and limited seats. To host non-IITian students on the campus and give them a taste of the IIT culture, Indian Institute of Technology Gandhinagar (IITGN) has been offering the non-degree programme since the last one decade. The programme is open at various levels for students of Engineering, Sociology, Development studies and more.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/fulfilling-the-iit-dream-without-jee-or-gate/articleshow/69823255.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69823222,imgsize-163211,width-400,resizemode-4/69823222.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:37 PM EST",
+      "updatedDate": "June 18, 2019 8:37 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:37 PM EST",
+    },
+    {
+      "id": "c21dadb0-657a-4711-86cc-b889a77229d9",
+      "headline": "JoSAA 2019 begins IIT seat allocation process; check the schedule here",
+      "fullNews": "NEW DELHI: Joint Seat Allocation Authority [JoSAA] 2019 has commenced the registration process for choice filling for academic programs under JoSAA on June 16, 2019, on its official website. The candidates who have qualified in the JEE Advanced 2019 examination can visit the official website of JoSAA- josaa.nic.in- to register for the admission process.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/josaa-2019-begins-iit-seat-allocation-process-check-the-schedule-here/articleshow/69823185.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69823188,imgsize-19019,width-400,resizemode-4/69823188.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:38 PM EST",
+      "updatedDate": "June 18, 2019 8:38 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:38 PM EST",
+    },
+    {
+      "id": "06291b34-f2d4-43bb-9002-674f6e84abe5",
+      "headline": "Educational institutions powering a future-ready workforce through AI",
+      "fullNews": "Microsoft is collaborating with 10 technical institutes from across the country to set up infrastructure for courses in artificial intelligence (AI). As part of the AI Digital Labs initiative, Microsoft will support these institutions to set up core AI infrastructure and IoT Hub as well as provide access to a wide range of AI developmental tools and Azure AI Services. The collaboration is expected to benefit 1.5 lakh students, thereby helping them to be a future-ready workforce.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/educational-institutions-powering-a-future-ready-workforce-through-ai/articleshow/69822625.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69822621,imgsize-145488,width-400,resizemode-4/69822621.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:40 PM EST",
+      "updatedDate": "June 18, 2019 8:40 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:40 PM EST",
+    },
+    {
+      "id": "7df8f2f6-0b30-41dc-989a-1b6ecc352a80",
+      "headline": "BA or BSc Economics: What is a better choice",
+      "fullNews": "Both courses are Math-intensive, the only difference is in their nomenclature with no major difference in the course content, say academicians Bachelor of Arts-BA-(Hons) Economics and Bachelor of Science -BSc-(Hons) Economics may have thrown aspirants into a quandary over the intrinsic difference between the two, but academicians claim the difference lies in the nomenclature.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/ba-or-bsc-economics-what-is-a-better-choice/articleshow/69822453.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69822443,imgsize-71900,width-400,resizemode-4/69822443.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:41 PM EST",
+      "updatedDate": "June 18, 2019 8:41 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:41 PM EST",
+    },
+    {
+      "id": "cb3dd541-676a-4dd6-87a5-4e7e67dac63c",
+      "headline": "St Philomena College gets vision group grant to set up advanced study ",
+      "fullNews": "MANGALURU: St Philomena College, Puttur, will soon get a Center for Theoretical Nuclear and Particle Physics for Advanced Studies. This will be set up with departmental grant Karnataka Fund for Infrastructure Strengthening in Science and Technology in higher educational institutions (K-FIST L-1 2018-19) worth Rs. 20 lakh. This was given to Rev Fr Antony Prakash Monteiro, campus director and chairman for PG Studies by Vision Group on Science and Technology (VGST), Department of IT, BT and Science & Technology, Karnataka. Prof K B Vijaya Kumar from Mangalore University is collaborator for the Project.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/st-philomena-college-gets-vision-group-grant-to-set-up-advanced-study-centre/articleshow/69819007.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69818990,imgsize-141164,width-400,resizemode-4/69818990.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:42 PM EST",
+      "updatedDate": "June 18, 2019 8:42 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:42 PM EST",
+    },
+    {
+      "id": "56fa831d-aecf-4629-a7a0-d2ef42d467b8",
+      "headline": "IIM-A confers Young Alumni Achievers Award to six",
+      "fullNews": "AHMEDABAD: The Indian Institute of Management, Ahmedabad (IIM-A) on Sunday announced six winners of Young Alumni Achievers Award 2019. The winners include head of southeast Asia for the Boston Consulting Group (BCG) and reader of Physics at University of Cambridge. This was fifth edition of the awards that started in 2015 to recognize outstanding contribution by alumni under 45 years of age in their field of choice. As per IIM-A officials, the winners were chosen from nearly 100 entries this year which were invited in seven categories. This year, the awards were conferred in three categories. There were no awards in media and entertainment industry and public service categories this year.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/iim-a-confers-young-alumni-achievers-award-to-six/articleshow/69813460.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69813457,imgsize-136098,width-400,resizemode-4/69813457.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:43 PM EST",
+      "updatedDate": "June 18, 2019 8:43 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:43 PM EST",
+    },
+    {
+      "id": "b8501ccb-70e7-4aea-a647-bf26c30eba69",
+      "headline": "Allahabad University Result: AU UGAT, PGAT result 2019 announced; ",
+      "fullNews": "NEW DELHI: The result of the Allahabad University AU UGAT and PGAT 2019 examination has been declared on the official website of Allahabad University - http://www.aupravesh2019.com/.  Candidates who had appeared for the AU UGAT and PGAT, can now check their result on the official website of the Allahabad University - http://www.aupravesh2019.com/. ",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/allahabad-university-result-au-ugat-pgat-result-2019-declared-check-aupravesh2019-com/articleshow/69813064.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69813072,imgsize-134968,width-400,resizemode-4/69813072.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:44 PM EST",
+      "updatedDate": "June 18, 2019 8:44 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:44 PM EST",
+    },
+    {
+      "id": "c40b9a59-b27c-4770-bcf3-43a7c085c938",
+      "headline": "Panchayati Raj Bihar invites applications for 234 Technical and Non-",
+      "fullNews": "NEW DELHI: Panchayati Raj Department, Govt of Bihar, has invited applications for the recruitment of Technical and Non-Technical Posts. Eligible candidates having B.Tech, B.Arch, M.Tech, Engg Graduate, MBA, CA can apply for the post through official website on or before June 30, 2019 (up to 5:00 pm).",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/panchayati-raj-bihar-invites-applications-for-234-technical-and-non-technical-posts/articleshow/69811873.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69811955,imgsize-220728,width-400,resizemode-4/69811955.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:45 PM EST",
+      "updatedDate": "June 18, 2019 8:45 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:45 PM EST",
+    },
+    {
+      "id": "8569a178-b724-4d8d-9ef9-078200b055aa",
+      "headline": "SCB medical college gets MCI nod to start DM (Hepatology) course",
+      "fullNews": "BHUBANESWAR: The Board of Governors of Medical Council of India (MCI) has given permission to the SCB Medical College and Hospital at Cuttack to start doctor of medicine (DM) (Hepatology) super-specialty course from this educational year. Rakesh Kumar Vats, secretary general of MCI, in a letter to dean and principal of the SCB medical college informed the institute about the MCI's permission for starting two seats per year in DM (Hepatology) from the year 2019-20.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/scb-medical-college-gets-mci-nod-to-start-dm-hepatology-course/articleshow/69810811.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69810806,imgsize-101827,width-400,resizemode-4/69810806.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:46 PM EST",
+      "updatedDate": "June 18, 2019 8:46 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:46 PM EST",
+    },
+    {
+      "id": "7624abf2-0dfd-489d-beaf-58d96f147ead",
+      "headline": "Reminder to Odisha universities, colleges for submitting details on ",
+      "fullNews": "BHUBANESWAR: The state government has asked the director of higher education and registrars of seven state universities to submit detail calculation of total additional liabilities for the period from January 1, 2016 to March 31 this year after revision of salary according to the University Grants Commission (UGC) scale of pay. These universities were Utkal University, Berhampur University, Sambalpur University, Ravenshaw University, Fakir Mohan University, North Odisha University and Shree Jagannath Sanskrit University. The higher education department has directed registrars of these universities to submit the detail by June 20.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/reminder-to-odisha-universities-colleges-for-submitting-details-on-arrears-after-salary-revision/articleshow/69810774.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69810775,imgsize-60207,width-400,resizemode-4/69810775.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:47 PM EST",
+      "updatedDate": "June 18, 2019 8:47 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:47 PM EST",
+    },
+    {
+      "id": "995c5a76-9cd8-45d6-a5e5-27890f05b60d",
+      "headline": "HSSC JE Recruitment 2019: Apply online for 1624 Junior Engineer ",
+      "fullNews": "NEW DELHI: The Haryana Staff Selection Commission (HSSC) has invited applications for direct recruitment for 1624 Junior Engineer posts. Interested and eligible candidates can apply online through the official website starting from June 20, 2019 to July 4, 2019 till 11:59 pm. Thereafter the website link will be disabled. ",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/hssc-je-recruitment-2019-apply-online-for-1624-of-junior-engineer-posts/articleshow/69810121.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69810216,imgsize-98486,width-400,resizemode-4/69810216.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:48 PM EST",
+      "updatedDate": "June 18, 2019 8:48 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:48 PM EST",
+    },
+    {
+      "id": "a88336d2-6bb1-43af-aa66-e09ec89bc254",
+      "headline": "Periyar University UG, PG results 2019 declared at periyaruniversity.ac.in; ",
+      "fullNews": "NEW DELHI: Periyar University (PU) Salem has declared the results for UG and PG April examination on its official website on Saturday, i.e., June 15, 2019. The candidates who have appeared for the PU UG or PG examination can visit the official website of PU- periyaruniversity.ac.in - to check and download their result.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/periyar-university-ug-pg-results-2019-declared-at-periyaruniversity-ac-in-download-here/articleshow/69802788.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69802789,imgsize-58240,width-400,resizemode-4/69802789.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:49 PM EST",
+      "updatedDate": "June 18, 2019 8:49 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:49 PM EST",
+    },
+    {
+      "id": "eb70d3e2-f5b5-426f-b1ff-23bc37dd533c",
+      "headline": "Andhra Pradesh Open school inter and SSC results 2019 declared at ",
+      "fullNews": "NEW DELHI: Andhra Pradesh  State Open School Society (APOSS) has declared the result of SSC and inter board exams on its official website. The candidates who have appeared for the AP open school SSC or inter examination can visit the official website of APOSS- apopenschool.org- to check and download their result.",
+      "link": "https://timesofindia.indiatimes.com/home/education/news/andhra-pradesh-open-school-inter-and-ssc-results-2019-declared-at-apopenschool-org/articleshow/69801221.cms",
+      "bannerImage": "https://timesofindia.indiatimes.com/thumb/msid-69801222,imgsize-1153277,width-400,resizemode-4/69801222.jpg",
+      "category": {
+        "id": "eee28bea-3432-4326-9e3c-6a4765da3768",
+        "category": "Education"
+      },
+      "source": {
+        "id": "740a2bf7-ebb8-44dc-af5c-23695e5fd9e9",
+        "source": "Times of India",
+        "shortCode": "TOI"
+      },
+      "isActive": true,
+      "createdDate": "June 18, 2019 8:50 PM EST",
+      "updatedDate": "June 18, 2019 8:50 PM EST",
+      "sourcePublishDate": "June 18, 2019 5:50 PM EST",
+    }
+  ]
+}

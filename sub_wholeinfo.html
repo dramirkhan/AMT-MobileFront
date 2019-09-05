@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet"/>
+
+		
+		<style type="text/css">
+			.news-list-img{width:310px; margin: 15px 15px;}
+			.news-list-img img{width:100%;}
+			.mui-content img{width:100%;}
+			.mui-content *{color:#222222; font-size:16px;}
+			#share {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript" src="js/mui.min.js"> </script>
+		<script type="text/javascript" src="js/vue.min.js"> </script>  
+		<script type="text/javascript" src="js/plusshare.js"> </script>  
+		
+		<div id="header">
+		<h1 class="mui-title" style="font-size:23px;">{{artInfo.headline}}</h1>
+		<img class="news-list-img" v-bind:src="artInfo.bannerImage">
+		<div class="mui-content" style="padding:10px; line-height:1.8em; color:#222222;" > {{artInfo.fullNews}}</div>
+		<button type="button" class="mui-btn mui-btn-success" id="share" style="display:block;margin:0 auto"> Click me to share this news</button>
+		
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function () {
+				
+			    var artId = plus.storage.getItem('artId');  // 
+			    var link = plus.storage.getItem('link'); // 这是显示新闻页面的子页面 我们需要之前父页面已经存入缓存的artid link然后再两个子页面中分别显示出来
+			  //  alert("this is first subpage")
+			    console.log('artId'+artId);
+			    console.log('link'+link);    // 至此 我们已经拿到了id和link
+				indexCtaeObj.link=link;
+								
+								 //获取文章信息
+				mui.getJSON(
+				  "http://13.59.129.23:8080/amt-news/api/v1/news/"+artId+"?showAllNews=true&timezone=Australia/Brisbane" ,
+				  
+				  
+				  function(res){
+				   indexCtaeObj.artInfo = res;
+				  }
+				 );
+				 
+				 
+        //分享
+ 						
+				document.getElementById('share').addEventListener('tap',function(){
+					
+
+                          
+                //分享内容，开发者可自定义
+                var message = {
+                    title: "American Muslim Today", //应用名字
+                    content: "This is the latest news from our AMT App. Please download",
+                    href: link, //分享出去后，点击跳转地址
+                    thumbs: ["./imgs/logo.png"] //分享缩略图
+                }
+                //调起分享
+                plusShare(message, function(res) {
+                    //分享回调函数
+                    if(res) {
+                        plus.nativeUI.toast("分享成功");
+                    } else {
+                        plus.nativeUI.toast("分享失败");
+                    }
+                })
+            
+
+				});
+
+				
+				
+				
+
+				
+			})
+			
+			
+			
+			
+			
+			var indexCtaeObj = new Vue({
+				el:'#header',
+				data:{
+					// cate : [business entertainment general health science sports technology],
+					
+				link:'',
+				artInfo : {}
+				
+				},
+				
+			});
+
+			
+	
+
+
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>

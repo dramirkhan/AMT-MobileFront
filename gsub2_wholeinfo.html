@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript" src="js/mui.min.js"> </script>
+		<script type="text/javascript" src="js/vue.min.js"> </script>  
+		
+		<div id="header">
+		<div>errerererererer</div>
+		<a v-bind:href="link">{{link}}</a>
+		</div>
+		
+
+		
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function () {
+				
+			    var artId = plus.storage.getItem('artId');  // 
+			   // var link = plus.storage.getItem('link'); // 这是显示新闻页面的子页面 我们需要之前父页面已经存入缓存的artid link然后再两个子页面中分别显示出来
+			    alert("this is first subpage")
+			    console.log('artId'+artId);
+//			    console.log('link'+link);    // 至此 我们已经拿到了id和link
+				indexCtaeObj.link=artId;
+				
+				
+				
+
+				
+			})
+			
+			var indexCtaeObj = new Vue({
+				el:'#header',
+				data:{
+					// cate : [business entertainment general health science sports technology],
+					
+				link:''
+				
+				},
+				
+				methods:{
+					
+			
+					
+						
+					
+				}
+			
+				
+			});
+			
+			
+			
+	
+
+
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>

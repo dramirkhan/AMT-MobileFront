@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	
+	<style type="text/css">   
+		#header{background: url(imgs/headerBg.png); height: 104px;}
+		#logo{width: 50th; height: 44px; text-align: left; flex-shrink: 0;}
+		#logo img{width: 40px;}
+		#indexSearch{width: 100%; height: 30px; background: #FFFFFF; margin: 7px 15px; border-radius:30px;}
+		#indexSearch input[type="search"] {display: block;width: 96%; height: 30px; line-height: 30px; padding: 0px 2%; background: none; -webkit-appearance: none; appearance: none; font-size: 15px; text-indent: 15px; text-align: left;}
+		#indexCate {height: 44px;}
+		#indexCate a{color:#FFFFFF;}
+		.mui-active{border-color: #FFFFFF !important;}
+
+		
+	
+	
+	</style>
+
+
+
+</head>
+<body>
+<div id="header">
+	<!-- heaer 部分分成上下两块 -->
+	
+	<!-- 由于采取display flex 上面两小块div可以无脑2横向排列。 -->
+	<div style="display: flex;">
+		<div id="logo">
+			<img src="imgs/logo.png"/>
+		</div>
+		
+		<div id="indexSearch">
+			<input type="search" value="" id="indexSearchPut" placeholder="please enter the key word" />
+			
+		</div>
+		
+	</div>
+	
+	<!-- header 下面 -->  <!-- mui-scroll 是mui框架自带class 可以使列表滚动 -->
+	
+	<div id="indexCate" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" >
+		<div class="mui-scroll">
+			<a class="mui-control-item mui-active "  v-bind:id="2">
+				Recommand
+			</a>       
+<!-- 	上面这个recommand其实就是id=2 的 general 所以直接给他值了 -->
+			<a class="mui-control-item " v-for="(items, index) in cate"
+v-bind:id="index">
+				{{items}}
+			</a>
+			
+			
+		</div>
+		
+		
+		
+		
+	</div>
+	
+
+</div>
+	
+	<!-- 底部导航功能 -->
+	<nav class="mui-bar mui-bar-tab" >
+		<a class="mui-tab-item mui-active" href="#tabbar" id="nav_home">
+			<span class="mui-icon mui-icon-home" ></span>
+			<span class="mui-tab-label" style="color: #2AC845;" >Index</span>
+		</a>
+		<a class="mui-tab-item" href="#tabbar-with-chat">
+			<span class="mui-icon mui-icon-email" style="size: auto;" ><span class="mui-badge" style="size: auto;">9</span></span>
+			<span class="mui-tab-label">Message</span>
+		</a>
+		<a class="mui-tab-item" href="#tabbar-with-contact">
+			<span class="mui-icon mui-icon-contact" style="size: auto;"></span>
+			<span class="mui-tab-label">Friend</span>
+		</a>
+
+		<a class="mui-tab-item" href="#tabbar-with-contact" id="page_category">
+			<span class="mui-icon mui-icon-videocam"></span>
+			<span class="mui-tab-label">Video</span>
+		</a>
+		
+		
+		<a class="mui-tab-item" href="#tabbar-with-map" id="page_login" target="login.html">
+			<span class="mui-icon mui-icon-gear"></span>
+			<span class="mui-tab-label">Setting</span>
+		</a>
+	</nav>
+</body>
+    <!-- js 引用习惯放body最下面 -->
+	<script type="text/javascript" src="js/mui.min.js"> </script>
+	<script type="text/javascript" src="js/vue.min.js"> </script>  
+	<!-- // vue 引用 -->
+	<!-- 执行js动作 -->
+    <script type="text/javascript" charset="utf-8">   
+				// mui 添加子窗口sub.html
+	         	mui.init({
+					subpages : [
+						{
+							url: 'sub.html',
+							id: 'sub',
+							styles:{
+								top: '108px',
+								bottom:'44px'
+								
+							}	
+						}
+					]
+					
+					
+					
+					
+					
+					
+					
+					
+				});   // mui 初始化
+				// plusReady 要在模拟器看 chrome不支持
+				
+				
+				
+				
+				
+				
+				
+				//plusReady：对于 HTML5+应用的页面有一个很重要的 “plusready”事件，此事件会在页面加载后自动触发，表示所有 HTML5+ API 可以使用， 在此事件触发之前不能
+				
+				
+				
+				// 调用 HTML5+ API
+				mui.plusReady(function () {
+					plus.storage.removeItem('suid');
+				
+				    var isImmersedStatusbar = plus.navigator.isImmersedStatusbar(); // 判断是否开启沉浸式
+					if (isImmersedStatusbar){
+						var StatusbarHeight = plus.navigator.getStatusbarHeight();
+						console.log(StatusbarHeight);
+						// 获取系统高度
+					
+						
+						var header = document.getElementById('header');  // 拿到header的dom对象
+						header.style.paddingTop = StatusbarHeight + 'px';
+						
+						
+					}
+				});
+				
+				var indexCtaeObj = new Vue({
+					el:'#indexCate',
+					data:{
+						// cate : [business entertainment general health science sports technology],
+						
+		            cate: {"0":"business","1":"entertainment","2":"general","3":"health","4":"science","5":"sports","6":"technology"}
+					//cate: {"13":"9","entertainment":"10","general":"12","health":"14","science":"15","sports":"16","technology":"17"}
+					}	
+					
+				});
+				
+				
+				// 链接远程服务器获取分类
+				
+//  'http://api.hcoder.net/api/index.php?token='+apiToken+'&c=cate';
+				/*
+				mui.getJSON(
+				 apiUrl+'cate',
+				//apiUrl, 
+				{},
+				function(res){
+					console.log(apiUrl);
+				
+					
+					console.log(JSON.stringify(res));
+				    indexCtaeObj.cate = res.data;
+					
+					
+				}
+				
+				);
+				*/    //  先不用了 用usa 新闻category
+			   
+				 //绑定分类点击事件
+				mui('.mui-scroll').on('tap','.mui-control-item',function(){
+						var index = this.getAttribute('id'); 
+						// 获取被点击元素的id 属性 并弹出
+						// 窗口间的数据传递
+						//alert(index);
+						var subpage = plus.webview.getWebviewById('sub');
+						// 拿到子窗口的sub对象
+						console.log((typeof(index)));
+						subpage.evalJS('category='+ index +'; getNewsList();');  // 字符串拼接
+				       // 这里的index其实有问题 说法上面会误解  html 里的item index 其实我们只要item 然后item在vue里面属性绑定了id  再讲id给下面函数里的index（不是html里那个 那个没用多余了） 作为父子页面传参
+					    // 窗口间的数据传递   比如某一个窗口用到执行另一个窗口刷新之类
+						//'https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=09f38fd0817948539d840bd426f92294',
+						//'http://api.hcoder.net/api/index.php?token='+apiToken+'&c=cate'
+					
+				});
+				// search function
+				// 监听搜索按钮事件
+				
+				var indexSearchPut = document.getElementById('indexSearchPut'); // 获取dom 传统js
+				
+				// 调用indexSearchPut这个对象的addEventListener方法
+				// 会自动传一个e参数进来 通过e对象我们就能知道点击的是键盘上哪个按钮
+				indexSearchPut.addEventListener('keyup',function(e){
+	
+					
+					if  (e.keyCode == 13) {
+						document.activeElement.blur();
+						
+						var kwd = this.value;
+						
+						
+						console.log(kwd);
+						var subpage = plus.webview.getWebviewById('sub'); // 拿到子窗口对象
+						subpage.evalJS('kwd = "'+ kwd +'"; getNewsList();');
+						
+						
+					} 
+					
+					
+					});
+					
+				// setting function  // 监听 按钮
+				document.getElementById('page_login').addEventListener('tap',function(){
+					var LoginRes = checkLogin();
+					if (!LoginRes) {return false;}  // 结束此函数 自动跳转reg去注册
+					
+					// 本地已经有用户id srand suid以后再进入my html 
+
+					mui.openWindow({
+						url: 'my.html',
+						id:'my'
+						
+						
+						
+					});
+					
+					
+					
+					});
+					// enter settings if you already login 
+
+				
+				
+				
+			
+	</script>  
+
+
+
+</html>

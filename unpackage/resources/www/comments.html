@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link href="css/mui.min.css" rel="stylesheet" />
+<style type="text/css">
+.my-comments{padding:10px; background:#FFF; margin-bottom:1px;}
+.my-comments-c{line-height:1.8em; font-size:14px; color: blue;}
+.my-comments-t{line-height:1.8em; font-size:15px; color: black;}
+.my-comments-o{line-height:1.8em; font-size:15px; padding:0px 10px; text-align:right; color: firebrick;}
+.mui-bar-nav {background: lightgoldenrodyellow;}
+</style>
+</head>
+
+<body>
+<header class="mui-bar mui-bar-nav">
+ <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+ <h1 class="mui-title">All of my review</h1>
+</header>
+
+
+
+<div class="mui-content" id="mycomments">
+ <div class="my-comments" v-for="items in comments" v-bind:id="'comments_'+items.comments_id" style="background:lightyellow;">
+  <div class="my-comments-c">
+   Your review : {{items.comments_contents}}
+  </div>
+  <div class="my-comments-t">
+   The article title : {{items.article_title}}
+  </div>
+  <div class="my-comments-o"  @click="removeComments(items.comments_id)">
+   delete your article
+  </div>
+ </div>
+ <div id="refreshContainer"></div>
+</div>
+		
+		
+		
+		<script src="js/mui.js"></script>
+		<script src="js/mui.min.js"></script>
+
+		
+		<script src="js/vue.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var page =1;
+			var loginRes = [];
+			var commentsObj = new Vue({
+				el:"#mycomments",
+				data:{
+					comments:[]
+					
+					
+				},
+				methods : {
+				removeComments : function(id){
+				mui.confirm('are you sure to delete?','', ['yes','no'],function(e){
+					if(e.index == 0){
+					mui.post(
+					apiUrl+'articleComments&m=delete',
+					{commentid:id,  wit_suid : suid, wit_srand : srand},
+					function(res){
+					console.log(JSON.stringify(res));
+					mui.toast('delete successfully');
+					getComments();
+					   //删除评论元素
+					var cDom = document.getElementById('comments_'+id);
+					cDom.parentNode.removeChild(cDom);
+      }
+     );
+    }
+   });
+  }
+ }
+});
+			
+			mui.plusReady(function(){
+				suid = plus.storage.getItem('suid');
+				srand = plus.storage.getItem('srand');
+				var loginRes = checkLogin();
+				if (!loginRes) {return false;}
+				getComments();
+			});
+			
+			
+			
+			
+			// 直接交互了
+			function getComments(){ 
+				mui.post(
+					apiUrl + 'articleComments',
+					{wit_suid : suid , wit_srand:srand},
+					function(res){
+						console.log(JSON.stringify(res));
+						commentsObj.comments=res.data;
+						
+						
+					}, 'json'
+				);
+				
+				
+				
+				
+				
+				
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>

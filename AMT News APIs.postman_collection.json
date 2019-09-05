@@ -1,0 +1,1014 @@
+1. News List API has new filter parameters now (all these parameters are optional) : 
+   "source" : "9b667e75-d6f6-408c-8205-de3a95080bce",
+ "category": "5aae87db-4600-46d6-9f52-77bd4083623d",
+   "searchText": "some search keyword",
+ "dateType": "SOURCE_PUBLISH_DATE", (Possible Values : SOURCE_PUBLISH_DATE / UPDATED_DATE)
+ "fromDate": "2019-01-01 18:30",
+ "toDate": "2019-12-15 18:30"
+
+2. Create new account API :
+   POST /account
+   Request Body : 
+{  
+   "name":"amt 3", (Required)
+   "email":"amt3@test.com", (Required)
+   "password":"test123", (Required)
+   "confirmPassword":"test123", (Required)
+   "timeZone":"US/Central" (Optional)
+}
+,
+
+
+http://13.59.129.23:8080/amt-news/oauth/token
+
+
+
+
+
+{
+	"info": {
+		"_postman_id": "cc6e444a-641d-4936-a29e-75fce3cb38a0",
+		"name": "AMT News APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 7c03857c-acb4-4f97-9914-6263c1009a6a"
+							},
+							{
+								"key": "X-XSRF-TOKEN",
+								"type": "text",
+								"value": "7723962a-4fd6-4e37-84ae-ca55ae797b0b"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"category\" : \"National News\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/amt-news/api/v1/news/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List News Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/news/categories?showAllCategories=false&timezone=Australia/Brisbane",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "showAllCategories",
+									"value": "false"
+								},
+								{
+									"key": "timezone",
+									"value": "Australia/Brisbane"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category by ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 7c03857c-acb4-4f97-9914-6263c1009a6a"
+							},
+							{
+								"key": "X-XSRF-TOKEN",
+								"type": "text",
+								"value": "7ee117ba-08ed-4479-9b34-632268348e21"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"category\" : \"NTR NEWS\"\n}"
+						},
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/news/categories/d400d8bf-2897-4d66-bcda-861b2b06c17e",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news",
+								"categories",
+								"d400d8bf-2897-4d66-bcda-861b2b06c17e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 7c03857c-acb4-4f97-9914-6263c1009a6a"
+							},
+							{
+								"key": "X-XSRF-TOKEN",
+								"type": "text",
+								"value": "dab4ad16-d2f4-4346-a953-aa13c9577ff6"
+							}
+						],
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/news/categories/d400d8bf-2897-4d66-bcda-861b2b06c17e",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news",
+								"categories",
+								"d400d8bf-2897-4d66-bcda-861b2b06c17e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivate Category by ID",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 7c03857c-acb4-4f97-9914-6263c1009a6a"
+							},
+							{
+								"key": "X-XSRF-TOKEN",
+								"type": "text",
+								"value": "967fbc87-9578-4337-b3c0-dff51c7211b2"
+							}
+						],
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/news/categories/d400d8bf-2897-4d66-bcda-861b2b06c17e/deactivate",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news",
+								"categories",
+								"d400d8bf-2897-4d66-bcda-861b2b06c17e",
+								"deactivate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activate Category by ID",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 7c03857c-acb4-4f97-9914-6263c1009a6a"
+							},
+							{
+								"key": "X-XSRF-TOKEN",
+								"type": "text",
+								"value": "598fa2cd-6651-490d-9fe4-2872276d2617"
+							}
+						],
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/news/categories/d400d8bf-2897-4d66-bcda-861b2b06c17e/activate",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news",
+								"categories",
+								"d400d8bf-2897-4d66-bcda-861b2b06c17e",
+								"activate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		
+		
+		
+		
+		
+		
+		2. Create new account API :
+		   POST /account
+		   
+URL : POST http://13.59.129.23:8080/amt-news/account
+http://13.59.129.23:8080/amt-news/oauth/token
+Header : Content-Type : application/json
+Body : 
+{
+  "name" : "amt 3",
+  "email" : "amt3@test.com",
+  "password" : "test123",
+  "confirmPassword" : "test123",
+  "timeZone" : "US/Central"
+}
+		   Request Body : 
+		{  
+		   "name":"amt 3", (Required)
+		   "email":"amt3@test.com", (Required)
+		   "password":"test123", (Required)
+		   "confirmPassword":"test123", (Required)
+		   "timeZone":"US/Central" (Optional)
+		}
+		
+		
+		{
+			"name": "Account",
+			"item": [
+				{					
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "amt-client-secret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "amt-client",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "admin@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/oauth/token",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test User Access",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer d35dc176-9a7c-49c4-bad5-10e955a17ee9",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/test/access/user",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"test",
+								"access",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Admin Access",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 86178a9f-7651-4894-8aaa-c2b18b8b5347",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/test/access/admin",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"test",
+								"access",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Source",
+			"item": [
+				{
+					"name": "List News Sources",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/news/sources?showAllSources=false&timezone=Australia/Brisbane",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news",
+								"sources"
+							],
+							"query": [
+								{
+									"key": "showAllSources",
+									"value": "false"
+								},
+								{
+									"key": "timezone",
+									"value": "Australia/Brisbane"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Source",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 7c03857c-acb4-4f97-9914-6263c1009a6a"
+							},
+							{
+								"key": "X-XSRF-TOKEN",
+								"type": "text",
+								"value": "c9a48ded-eda5-4fae-a5cb-30bb09836617"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"source\" : \"Indore News\",\n  \"shortCode\" : \"INDN\"\n}"
+						},
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/news/sources",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news",
+								"sources"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Source by ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 7c03857c-acb4-4f97-9914-6263c1009a6a"
+							},
+							{
+								"key": "X-XSRF-TOKEN",
+								"type": "text",
+								"value": "22d902d4-d26e-4a8b-b182-e535a6b5ed44"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"source\" : \"Indore News MP\",\n  \"shortCode\" : \"INDNMP\"\n}"
+						},
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/news/sources/5d1d5543-8b73-4fe9-911c-49717fe6e19f",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news",
+								"sources",
+								"5d1d5543-8b73-4fe9-911c-49717fe6e19f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Source by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 7c03857c-acb4-4f97-9914-6263c1009a6a"
+							},
+							{
+								"key": "X-XSRF-TOKEN",
+								"type": "text",
+								"value": "433df720-8a23-48fb-9cb6-e0128b8729f5"
+							}
+						],
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/news/sources/5d1d5543-8b73-4fe9-911c-49717fe6e19f",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news",
+								"sources",
+								"5d1d5543-8b73-4fe9-911c-49717fe6e19f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivate Source by ID",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 7c03857c-acb4-4f97-9914-6263c1009a6a"
+							},
+							{
+								"key": "X-XSRF-TOKEN",
+								"type": "text",
+								"value": "4ab65698-b2d2-4e42-a12d-78d9df70131e"
+							}
+						],
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/news/sources/c6f8cced-28f5-4560-b256-990791da29fc/deactivate",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news",
+								"sources",
+								"c6f8cced-28f5-4560-b256-990791da29fc",
+								"deactivate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activate Source by ID",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 7c03857c-acb4-4f97-9914-6263c1009a6a"
+							},
+							{
+								"key": "X-XSRF-TOKEN",
+								"type": "text",
+								"value": "65d678f8-13ef-4e65-890c-5bad970792b2"
+							}
+						],
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/news/sources/c6f8cced-28f5-4560-b256-990791da29fc/activate",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news",
+								"sources",
+								"c6f8cced-28f5-4560-b256-990791da29fc",
+								"activate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		1. News List API has new filter parameters now (all these parameters are optional) : 
+		   "source" : "9b667e75-d6f6-408c-8205-de3a95080bce",
+		 "category": "5aae87db-4600-46d6-9f52-77bd4083623d",
+		  "searchText": "some search keyword",
+		 "dateType": "SOURCE_PUBLISH_DATE", (Possible Values : SOURCE_PUBLISH_DATE / UPDATED_DATE)
+		 "fromDate": "2019-01-01 18:30",
+		 "toDate": "2019-12-15 18:30"
+		
+		
+		
+		
+		{
+			"name": "News",
+			"item": [
+				{
+					"name": "List News",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/news?page=1&pageSize=25",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "25"
+								},
+								{
+									"key": "showAllNews",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "timezone",
+									"value": "Australia/Brisbane",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get News By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/news/2639dd16-25ad-4ce0-ae07-abc047ac3a94?showAllNews=true&timezone=Australia/Brisbane",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news",
+								"2639dd16-25ad-4ce0-ae07-abc047ac3a94"
+							],
+							"query": [
+								{
+									"key": "showAllNews",
+									"value": "true"
+								},
+								{
+									"key": "timezone",
+									"value": "Australia/Brisbane"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create News",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 7529947b-6a75-4ef9-a029-22a95b3df6b2"
+							},
+							{
+								"key": "X-XSRF-TOKEN",
+								"type": "text",
+								"value": "3a7703bf-5c0c-4f07-a3b6-431e7cc87ca5"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"headline\" : \"Head line\",\n  \"fullNews\" : \"Full news\",\n  \"link\" : \"Link\",\n  \"bannerImage\" : \"Banner Image\",\n  \"sourceId\" : \"740a2bf7-ebb8-44dc-af5c-23695e5fd9e9\",\n  \"categoryId\" : \"eee28bea-3432-4326-9e3c-6a4765da3768\",\n  \"sourcePublishDateTime\" : \"2019-06-30 18:30\"\n}"
+						},
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/news",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update News by ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 7c03857c-acb4-4f97-9914-6263c1009a6a"
+							},
+							{
+								"key": "X-XSRF-TOKEN",
+								"type": "text",
+								"value": "22d902d4-d26e-4a8b-b182-e535a6b5ed44"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"source\" : \"Indore News MP\",\n  \"shortCode\" : \"INDNMP\"\n}"
+						},
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/news/sources/5d1d5543-8b73-4fe9-911c-49717fe6e19f",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news",
+								"sources",
+								"5d1d5543-8b73-4fe9-911c-49717fe6e19f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete News by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 7529947b-6a75-4ef9-a029-22a95b3df6b2"
+							},
+							{
+								"key": "X-XSRF-TOKEN",
+								"type": "text",
+								"value": "203a510d-0686-4320-a459-d668dcb6fadd"
+							}
+						],
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/news/75452d18-053b-41b3-8261-800d44e354ae",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news",
+								"75452d18-053b-41b3-8261-800d44e354ae"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivate News by ID",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 7529947b-6a75-4ef9-a029-22a95b3df6b2"
+							},
+							{
+								"key": "X-XSRF-TOKEN",
+								"type": "text",
+								"value": "cad80bde-29be-451b-9ad5-151f9f671946"
+							}
+						],
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/news/1ad29f11-08f6-4945-abc7-33e6d07168a5/deactivate",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news",
+								"1ad29f11-08f6-4945-abc7-33e6d07168a5",
+								"deactivate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activate News by ID",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 7529947b-6a75-4ef9-a029-22a95b3df6b2"
+							},
+							{
+								"key": "X-XSRF-TOKEN",
+								"type": "text",
+								"value": "c5f79c10-201f-43f1-9dca-ddd3a1948824"
+							}
+						],
+						"url": {
+							"raw": "http://13.59.129.23:8080/amt-news/api/v1/news/1ad29f11-08f6-4945-abc7-33e6d07168a5/activate",
+							"protocol": "http",
+							"host": [
+								"13",
+								"59",
+								"129",
+								"23"
+							],
+							"port": "8080",
+							"path": [
+								"amt-news",
+								"api",
+								"v1",
+								"news",
+								"1ad29f11-08f6-4945-abc7-33e6d07168a5",
+								"activate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	
+	<style type="text/css">   
+	
+		#header{height: 134px; width: 380px; background-image: linear-gradient(180deg, #a1c4fd 0%, #c2e9fb 100%);}
+		#logo{width: 50th; height: 44px; text-align: left; flex-shrink: 0;}
+		#logo img{width: 40px;}
+		#indexCate {height: 54px; margin: 10px;}
+		#indexCate a{color:darkgreen; font-size: 18px;}
+		#search_bar {
+			height: 28px;
+			top: 7px;
+			
+		}
+		.mui-active{border-color: sandybrown !important; background: lightblue; font-size: 19px; font-weight: 600;}
+		.masked{
+	
+		color: transparent;
+		background-color : black;
+		text-shadow : rgba(255,255,255,0.5) 0 5px 6px, rgba(255,255,255,0.2) 1px 3px 3px;
+		-webkit-background-clip : text;
+		}
+	</style>
+</head>
+<body>
+<div id="header" style="width: 380px;">
+	<!-- heaer 部分分成上下两块 -->
+	
+	<!-- 由于采取display flex 上面两小块div可以无脑2横向排列。 -->
+	<div style="display: flex;" >
+		
+<!-- 		<div id="logo">
+			<img src="imgs/logo.png"/>
+		</div> -->      
+		
+
+		
+		<div class="masked"  style="margin: 0px 170px; top: 0px; font-size: 10px;" id="title" >
+			<h4>AMT</h4>
+		</div>
+		
+		
+		
+		
+		<div id="icon2" @click="diyMylist(cate);">
+			<span class="mui-icon mui-icon-plusempty" style="color:green;margin: 3px -100px;font-weight: 800;"></span>
+		</div>
+		
+		<!-- <div id="icon" @click="test();"> 先不进测试-->
+		<div id="icon">
+			<span class="mui-icon mui-icon-search" style="color: #0000FF;margin: 3px -140px;"></span>
+		</div>
+		
+		
+		
+	
+<!-- 
+		<div id="indexSearch">
+			<input type="search" value="" id="indexSearchPut" placeholder="please enter the key word" />
+		</div> -->
+
+	</div>
+	
+	
+	<div v-show="ok" class="mui-input-row mui-search" id="search_bar">
+		<input id="indexSearch"  type="search" class="mui-input-clear" placeholder="click search icon again to hide me">
+	</div>
+	
+
+	<!-- header 下面 -->  <!-- mui-scroll 是mui框架自带class 可以使列表滚动 -->
+	
+	<div id="indexCate" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" >
+		<div class="mui-scroll">
+			<a class="mui-control-item mui-active" id="gsub_wholeinfo">
+				AMT News
+			</a>       
+<!-- 	上面这个recommand其实就是id=2 的 general 所以直接给他值了 -->
+
+<!-- 下面这个我们需要调用实际项目muslim后台给的数据 -->
+			<a class="mui-control-item" id="gsub2_wholeinfo" >
+				Original News 
+			</a>
+		</div>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+</div>
+	
+	<!-- 底部导航功能 -->
+	<nav class="mui-bar mui-bar-tab" >
+		<a class="mui-tab-item mui-active" href="#tabbar" id="nav_home">
+			<span class="mui-icon mui-icon-home" ></span>
+			<span class="mui-tab-label" style="color: #2AC845;" >Index</span>
+		</a>
+		<a class="mui-tab-item" href="#tabbar-with-chat">
+			<span class="mui-icon mui-icon-email" style="size: auto;" ><span class="mui-badge" style="size: auto;">9</span></span>
+			<span class="mui-tab-label">Message</span>
+		</a>
+		<a class="mui-tab-item" href="#tabbar-with-contact">
+			<span class="mui-icon mui-icon-contact" style="size: auto;"></span>
+			<span class="mui-tab-label">Friend</span>
+		</a>
+
+		<a class="mui-tab-item" href="#tabbar-with-contact" id="page_category">
+			<span class="mui-icon mui-icon-videocam"></span>
+			<span class="mui-tab-label">Video</span>
+		</a>
+		
+		
+		<a class="mui-tab-item" href="#tabbar-with-map" id="page_login" target="login.html">
+			<span class="mui-icon mui-icon-gear"></span>
+			<span class="mui-tab-label">Account</span>
+		</a>
+	</nav>
+</body>
+    <!-- js 引用习惯放body最下面 -->
+	<script type="text/javascript" src="js/mui.min.js"> </script>
+	<script type="text/javascript" src="js/vue.min.js"> </script>  
+	<!-- // vue 引用 -->
+	<!-- 执行js动作 -->
+    <script type="text/javascript" charset="utf-8">   
+
+			// 初始化mui.init()写在这里   
+            mui.init();
+			var defaultpage = "gsub_wholeinfo.html";	// 定义默认选项卡子页面
+			var subpages = ['gsub_wholeinfo.html','gsub2_wholeinfo.html'];
+			var subpagesUrl=   ['gsub_wholeinfo.html','gsub2_wholeinfo.html'];
+				//plusReady：对于 HTML5+应用的页面有一个很重要的 “plusready”事件，此事件会在页面加载后自动触发，表示所有 HTML5+ API 可以使用， 在此事件触发之前不能
+				
+				// 调用 HTML5+ API
+			mui.plusReady(function () {
+					var _self = plus.webview.currentWebview(); //获取当前页面的窗口对象
+					artId = _self.artId;
+					content=_self.content;
+					title=_self.title;
+					description=_self.description;
+					urlToImage=_self.urlToImage;
+					//link=_self.link;
+					//console.log(typeof(link))
+					//alert(link)
+					plus.storage.removeItem('suid');
+					plus.storage.setItem('artId', artId);
+					plus.storage.setItem('content', content);
+					plus.storage.setItem('title', title);
+					plus.storage.setItem('description', description);
+					plus.storage.setItem('urlToImage', urlToImage);
+					subpagesUrl=   ['gsub_wholeinfo.html',artId];
+					//plus.storage.setItem('link', link);
+					
+					
+				
+				
+				    var isImmersedStatusbar = plus.navigator.isImmersedStatusbar(); // 判断是否开启沉浸式
+					if (isImmersedStatusbar){
+						var StatusbarHeight = plus.navigator.getStatusbarHeight();
+						console.log(StatusbarHeight);
+						// 获取系统高度
+					
+						
+						var header = document.getElementById('header');  // 拿到header的dom对象
+						header.style.paddingTop = StatusbarHeight + 'px';
+					}
+					
+// 加载所有子页面
+			for(var i =0;i<2;i++){
+				var sub = plus.webview.create(
+					subpagesUrl[i], 
+                    subpages[i], 
+                    {
+                        top: '134px', 
+                        bottom: '50px' 
+                    }
+				);
+				// 除默认页面外，其他子页面隐藏
+				if(subpages[i] != defaultpage){
+					sub.hide();
+				}
+				_self.append(sub);	// 子页面加入窗口对象
+			}
+			
+			
+			
+			
+			
+			
+
+
+					
+
+					} )
+					
+										
+					
+					
+				
+				var indexCtaeObj = new Vue({
+					el:'#header',
+					data:{
+						// cate : [business entertainment general health science sports technology],
+						
+		            cate: {"0":"Entertainment","1":"Business","2":"General","3":"Health","4":"Science","5":"Sports","6":"Technology"},
+					//cate: {"13":"9","entertainment":"10","general":"12","health":"14","science":"15","sports":"16","technology":"17"}
+					// 这里是有问题的 cate的值应该是mtlist页面设置好以后传参index显示 但是用户第一次使用打开ap并没有设置所以刚打开时候是没有缓存的所以会报错以后解决
+					ok: 1+1==3,
+					
+					cate_muslim:[]
+					},
+					
+					methods:{
+						
+
+						
+			
+						
+					}
+
+					
+				});
+
+
+				mui.getJSON(
+					'http://13.59.129.23:8080/amt-news/api/v1/news/categories?showAllCategories=false&timezone=Australia/Brisbane',
+					function(res){
+						console.log(JSON.stringify(res))
+					indexCtaeObj.cate_muslim = res;
+					
+					}
+					);
+			   
+
+
+			   
+				 //绑定分类点击事件
+				mui('.mui-scroll').on('tap','.mui-control-item',function(e){
+						plus.webview.hide(defaultpage);		// 隐藏上一个子页面
+						plus.webview.show(this.id + ".html")	// 显示当前点击页面
+						defaultpage = this.id + ".html";	// 记录当前点击页面
+						
+				
+				
+						var subpage = plus.webview.getWebviewById(this.id + ".html");
+						// 拿到子窗口的sub对象
+						
+						
+						
+						
+					//	subpage.evalJS('artId="'+ artId +'";');  // 字符串拼接
+				       // 这里的index其实有问题 说法上面会误解  html 里的item index 其实我们只要item 然后item在vue里面属性绑定了id  再讲id给下面函数里的index（不是html里那个 那个没用多余了） 作为父子页面传参
+
+				});
+
+
+
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+	
+					
+				// setting function  // 监听 按钮
+				document.getElementById('page_login').addEventListener('tap', function(){
+					var LoginRes = checkLogin();
+					if (!LoginRes) {return false;}  // 结束此函数 自动跳转reg去注册
+					
+					// 本地已经有用户id srand suid以后再进入my html 
+
+					mui.openWindow({
+						url: 'my.html',
+						id:'my'
+						
+						
+						
+					});
+					
+					
+					
+					});
+					// enter settings if you already login 
+					
+							   
+				window.addEventListener('refresh1', function(e){//执行刷新
+				      location.reload();
+				});
+				   
+
+				
+				
+				
+			
+	</script>  
+
+
+
+</html>

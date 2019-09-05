@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link href="css/mui.min.css" rel="stylesheet" />
+<style type="text/css">
+
+.news-list{padding:0; margin:0;}   /* padding左右 margin上下？ */ 
+.news-list li{display:flex;flex-wrap:wrap;width:100%; padding:0px; background:AliceBlue; margin-bottom:10px;}
+.news-list-content {display:flex;height:130px ; width:100%; padding:0px; background:AliceBlue; margin-bottom:10px;}
+
+.news-list-img{width:160px;height:130px;  flex-shrink:0; margin: 15px 15px;}
+.news-list-img img{width:100%;}
+.news-list-title{width:100%; margin: 10px 10px ; line-height:1.6em; font-size:14px; left: 0.5px; }
+#refreshContainer li{}
+
+.mui-slider-item{display:flex; width:100%; padding:0px; margin-bottom:10px;flex-direction: row}
+
+.adv-img{width:230px;height:100px;  flex-shrink:0; margin: 15px 15px;display: inline;float: left;}
+	
+.adv-title{width:100%; margin:0px 0px; line-height:1.6em; font-size:19px;}
+.mui-slider-indicator{margin:135px auto;}
+
+
+
+
+</style> 
+</head>
+<body>
+<div id="refreshContainer">
+	
+
+<!-- 这里放的是穆斯林热点新闻或者视频滚动不是广告 -->
+<div class="mui-slider" style="height: 160px; background:lightgrey;" v-if="!flag">
+	Living news! Imnportant!
+  <div class="mui-slider-group mui-slider-loop">
+    
+	<!--第一个内容区容器-->
+    <div class="mui-slider-item" v-for="(items,index) in news" style="">
+      <!-- 具体内容 -->
+	  <div class="news-list-img" class="adv-img">
+	   <img class="mui-media-object mui-pull-left" v-bind:src="items.bannerImage">
+	  </div>
+	  
+	  <div class="adv-title">
+         &nbsp; &nbsp;  Advertisement is loading....
+	  </div>
+	 
+    </div>
+	
+	
+	
+    <!--第二个内容区-->
+    <div class="mui-slider-item">
+      <!-- 具体内容 --> Advertisement is end.
+    </div>
+	
+  </div>
+  
+ <div class="mui-slider-indicator">
+      <div class="mui-indicator mui-active" v-for="index in news">
+		  
+	  </div>
+
+</div>
+</div>
+
+<!-- 这里放的是谷歌热点新闻或者视频滚动不是广告 -->
+<div class="mui-slider" style="height: 160px; background:lightgrey;" v-if="flag">
+	Living news! Imnportant!
+  <div class="mui-slider-group mui-slider-loop">
+    
+	<!--第一个内容区容器-->
+    <div class="mui-slider-item" v-for="(items,index) in news" style="">
+      <!-- 具体内容 -->
+	  <div class="news-list-img" class="adv-img">
+	   <img class="mui-media-object mui-pull-left" v-bind:src="items.urlToImage">
+	  </div>
+	  
+	  <div class="adv-title">
+         &nbsp; &nbsp;  Advertisement is loading....
+	  </div>
+	 
+    </div>
+	
+	
+	
+    <!--第二个内容区-->
+    <div class="mui-slider-item">
+      <!-- 具体内容 --> Advertisement is end.
+    </div>
+	
+  </div>
+  
+ <div class="mui-slider-indicator">
+      <div class="mui-indicator mui-active" v-for="index in news">
+		  
+	  </div>
+
+</div>
+</div>
+
+
+
+<!-- 这个是穆斯林的新闻列表再flag=0的时候显示 -->
+ <ul class="news-list" v-if="!flag">
+     <li v-for="(items, index) in news" @click="showArticleinfo(items.newsId,items.link);">   
+	<!-- <li v-for="items in news" @click="showArticleinfo(items.url);">   
+	     -->
+		<div class="news-list-content">
+         <div class="news-list-img">
+          
+		  
+		  <img class="mui-media-object mui-pull-left" v-bind:src="items.bannerImage">
+         </div>
+            
+			<div class="news-list-title"> 
+	       
+			 {{items.headline}}
+		
+			  <a v-bind:href="items.link" > {{index}} </a>
+			</div> 	
+		</div>
+			
+			<!-- 这里放是广告 -->
+			<div class="mui-slider" style="height: 120px; background:lightgrey;" v-if="index%5==0 && index>0">
+				Here is adverrtisement
+			  <div class="mui-slider-group mui-slider-loop">
+			    
+				<!--第一个内容区容器-->
+			    <div class="mui-slider-item" v-for="(items,index) in news" style="">
+			      <!-- 具体内容 -->
+				  <div class="news-list-img" class="adv-img">
+				   <img class="mui-media-object mui-pull-left" v-bind:src="items.bannerImage">
+				  </div>
+				  
+				  <div class="adv-title">
+			         &nbsp; &nbsp;  Advertisement is loading....
+				  </div>
+				 
+			    </div>
+				
+				
+				
+			    <!--第二个内容区-->
+			    <div class="mui-slider-item">
+			      <!-- 具体内容 --> Advertisement is end.
+			    </div>
+				
+			  </div>
+			  
+			 <div class="mui-slider-indicator">
+			      <div class="mui-indicator mui-active" v-for="index in news">
+					  
+				  </div>
+			
+			</div>
+			</div>
+			
+			
+			
+				
+	</li>
+
+				
+			 
+
+
+ </ul>
+ 
+ 
+ 
+ <!-- 这个是谷歌的新闻列表再flag=1的时候显示 -->
+ 
+  <ul class="news-list" v-if="flag">
+     <li v-for="(items, index) in news" @click="showArticleinfo2(items.url,items.content,items.title,items.description,items.urlToImage);">   
+ 	<!-- <li v-for="items in news" @click="showArticleinfo(items.url);">   
+ 	     -->
+		<div class="news-list-content">
+         <div class="news-list-img">
+          <img class="mui-media-object mui-pull-left" v-bind:src="items.urlToImage">
+ 		  
+ 		  <img class="mui-media-object mui-pull-left" v-bind:src="items.bannerImage">
+         </div>
+            
+ 			<div class="news-list-title"> 
+ 	         {{items.title}} 
+ 			
+ 			  <a v-bind:href="items.url" > index </a>
+ 			 {{items.google_ok}} 
+ 			</div>
+		</div>	
+		<!-- 这里放是广告 -->
+		<div class="mui-slider" style="height: 120px; background:lightgrey;" v-if="index%5==0 && index>0">
+			Here is adverrtisement
+		  <div class="mui-slider-group mui-slider-loop">
+		    
+			<!--第一个内容区容器-->
+		    <div class="mui-slider-item" v-for="(items,index) in news" style="">
+		      <!-- 具体内容 -->
+			  <div class="news-list-img" class="adv-img">
+			   <img class="mui-media-object mui-pull-left" v-bind:src="items.bannerImage">
+			  </div>
+			  
+			  <div class="adv-title">
+		         &nbsp; &nbsp;  Advertisement is loading....
+			  </div>
+			 
+		    </div>
+			
+			
+			
+		    <!--第二个内容区-->
+		    <div class="mui-slider-item">
+		      <!-- 具体内容 --> Advertisement is end.
+		    </div>
+			
+		  </div>
+		  
+		 <div class="mui-slider-indicator">
+		      <div class="mui-indicator mui-active" v-for="index in news">
+				  
+			  </div>
+		
+		</div>
+		</div>
+		
+ 			
+ 			
+ 			
+     </li>
+ 
+ </ul>
+ 
+ 
+ 
+ 	
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+<script src="js/mui.min.js"></script>
+<script src="js/vue.min.js"></script>
+<script type="text/javascript">
+	
+var diyList = new Array("Entertainment","Business","general","health","science","sports","technology");
+
+mui.init({
+	
+ pullRefresh : {
+     container:"#refreshContainer",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+     down : {
+      
+      contentinit: 'refresh when pulling down',
+      contentdown: 'refresh when pulling down',
+      contentover: 'please release to refresh',
+      contentrefresh: 'refreshing...',
+	  style:'circle', //必选，下拉刷新样式，目前支持原生5+ ‘circle’ 样式
+      color:'blue', //可选，默认“#2BD009” 下拉刷新控件颜色
+      height:'50px',//可选,默认50px.下拉刷新控件的高度,
+      range:'100px', //可选 默认100px,控件可下拉拖拽的范围
+      offset:'50px', //可选 默认0px,下拉刷新控件的起始位置
+      auto: true,//可选,默认false.首次加载自动上拉刷新一次
+      callback : getNewsList //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+     },
+     up : {
+       height:'50px',//可选.默认50.触发上拉加载拖动距离
+       auto:false,//可选,默认false.自动上拉加载一次
+	   contentinit: 'show more when pulling up',
+	   contentdown: 'show more when pulling up',
+       contentrefresh : "we are loading...",//可选，正在加载状态时，上拉加载控件上显示的标题内容
+       contentnomore:'There is no news',//可选，请求完毕若没有更多数据时显示的提醒内容；
+       callback : getMoreNews ,//必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+	   
+     }
+ },
+
+});
+
+mui.init();
+
+
+
+
+//使用vue
+var newsListObj = new Vue({
+ el: '#refreshContainer',
+ data: {news : [],
+		//muslim_ok: flag==0,
+		//google_ok: flag==1,
+		flag:true,  // 这个flag很重要 true就是默认给谷歌新闻 一旦点击muslim新闻马上由vue。data赋值false 然后显示穆斯林
+		// newsurl : []
+		///flag_adv: false
+		
+ 
+ 
+ 
+ },
+ updated: function() {
+     var sliderMuiObj = mui(".mui-slider");//滑动科目 
+        sliderMuiObj.slider({
+          interval: 2000  //如果你想自动3000ms滑动一下就写上这个。
+         });
+     },
+ 
+ 
+ methods:{
+   showArticleinfo : function(artId,link){
+	   // 用mui对象的openwindow方法打开窗口  artID is URL and is the parameter we transfer 
+		//alert(artId);   // open the selected newslist's url to see. we use url to transfer parameter'
+		alert('Ready? You will get the latest news in the world through our smart app ! ');
+		mui.openWindow({              
+			url: 'whole_info.html',
+			id : 'whole_info',
+			extras : {
+				artId : artId,
+				link:link,
+				
+				// news_title: items.title
+			
+			
+			
+			}        // 我们把值can shu传递给子窗口
+		});
+  },
+  
+  // 下面这个专门用来挑战谷歌对应的新闻详情页 妥协只能谷歌和穆斯林的详情页完全分开 
+	   showArticleinfo2 : function(artId,content,title,description,urlToImage){
+		   // 用mui对象的openwindow方法打开窗口  artID is URL and is the parameter we transfer 
+			//alert(artId);   // open the selected newslist's url to see. we use url to transfer parameter'
+			alert('Ready? You will get the latest news in the world through our smart app ! ');
+			mui.openWindow({              
+				url: 'whole_infog.html',
+				id : 'whole_infog',
+				extras : {
+					artId : artId,
+					content:content,
+					title:title,
+					description:description,
+					urlToImage:urlToImage
+				
+					
+					// news_title: items.title
+				
+				
+				
+				}        // 我们把值can shu传递给子窗口
+			});
+	},
+  
+  
+  
+  
+  
+ }
+});
+
+
+
+mui.plusReady(function(){   
+	
+	
+	// 马上去拿之前已经分配好的分类顺序 给子页修改复赋值										
+	var diyList = plus.storage.getItem('diyList');  // 字符串转数组再转对象
+							
+	if (diyList==null) {
+		diyList='Entertainment,Business,general,health,science,sports,technology'
+	}	 // 这里说明用户第一次使用程序缓存没有数据这个时候我们先默认标签顺序是这个以后客户自己更改了diylist的顺序后就不需要这段代码了				
+							
+	diyList = diyList.split(",");// 在每个逗号(,)处进行分解  ["abc", "abcd", "aaa"]
+	console.log(diyList); 
+	plus.storage.removeItem('link');
+	plus.storage.removeItem('artId');
+		
+		});
+	
+	
+	// subpage.evalJS('category='+ index +'; getNewsList();');  // 字符串拼接
+	
+	// 这里开始后面的category和page其实都是由index页面控制传参的
+	//新闻列表读取[用于切换分类及下拉刷新]
+	var category = '2', page = 1, kwd=''; 
+	// var mycategory=new Array("Entertainment","Business","general","health","science","sports","technology");
+	
+	var mycategory=diyList;
+	console.log(mycategory);
+	// category 保存category对应的数组序号信息 因为只能父子传递id数值 不能直接传分类名称 所以只能先传数字然后再数组里面找到对应的category 更新url 非常神奇
+	// console.log(category);
+	// category 可以传值了 其实是index里面传值函数evalJS中category必须多加一个双引号强制string才行 otherwise 系统会自动识别int
+	// 这里具体看一看新闻搜索开发那个腾讯视频教程
+	
+
+ 
+function getNewsList(){
+ plus.nativeUI.showWaiting();
+ //alert(category);
+
+ //重置上拉加载
+ page=1;
+
+ 
+ dict={"0":"business","1":"entertainment","2":"general","3":"health","4":"science","5":"sports","6":"technology"};
+// var mycategory=new Array("business","entertainment","general","health","science","sports","technology");
+ mui('#refreshContainer').pullRefresh().refresh(true);
+ //console.log(typeof(mycategory[category]));
+ //console.log('https://newsapi.org/v2/top-headlines?country=us&category='+mycategory[category]+'&apiKey=09f38fd0817948539d840bd426f92294'+'&page='+page);
+ //
+ 
+ /*
+ mui.getJSON(
+//  apiUrl+"article&m=articleList&page="+page+'&cate='+cate,
+//  'http://api.hcoder.net/api/index.php?token='+'5a7d3fec77613-100001'+'&c=cate', 
+ // this is category json from hcoder
+//'https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=09f38fd0817948539d840bd426f92294',
+
+  'https://newsapi.org/v2/top-headlines?country=us&category='+mycategory[category]+'&apiKey=09f38fd0817948539d840bd426f92294&q=' +kwd+ '&page=' + page,
+//  'https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=09f38fd0817948539d840bd426f92294&q=trump&page=1', 
+  function(res){
+   newsListObj.news = res.articles;
+   console.log('refresh');
+   console.log(JSON.stringify(res));
+   mui('#refreshContainer').pullRefresh().endPulldown();
+   page++;
+   plus.nativeUI.closeWaiting();
+  }
+ );   */
+  console.log(mycategory[category]);
+ mui.plusReady(function(){
+			//alert(newsListObj.flag);
+				
+			// 马上去拿之前已经分配好的分类顺序 给子页修改复赋值										
+			var diyList = plus.storage.getItem('diyList');  // 字符串转数组再转对象
+									
+			if (diyList==null) {
+				diyList='Entertainment,Business,general,health,science,sports,technology'
+			}	 // 这里说明用户第一次使用程序缓存没有数据这个时候我们先默认标签顺序是这个以后客户自己更改了diylist的顺序后就不需要这段代码了				
+									
+			diyList = diyList.split(",");// 在每个逗号(,)处进行分解  ["abc", "abcd", "aaa"]
+			console.log(diyList); 
+			var mycategory = diyList;
+			console.log(mycategory[category])
+			
+	
+			if (category<7 && category>-1){
+				
+				newsListObj.flag=true;
+				var URL='https://newsapi.org/v2/top-headlines?country=us&category='+mycategory[category]+'&apiKey=09f38fd0817948539d840bd426f92294&q=' +kwd+ '&page=' + page        
+			}  // 判断说明这个传过来的是谷歌新闻不是穆斯林新闻
+			else {
+				
+				var URL='http://13.59.129.23:8080/amt-news/api/v1/news?page='+page+'&category='+category+'&searchText='+kwd;	
+	//			http://13.59.129.23:8080/amt-news/api/v1/news?page=1&category=eee28bea-3432-4326-9e3c-6a4765da3768
+				 newsListObj.flag=false; // flag =0 说明是穆斯林新闻
+				
+			}
+			
+			
+	        mui.ajax({
+				
+			url :  URL	,
+            // url      :'https://newsapi.org/v2/top-headlines?country=us&category='+mycategory[category]+'&apiKey=09f38fd0817948539d840bd426f92294&q=' +kwd+ '&page=' + page,
+            type     : 'GET',
+            success  : function(res){
+				if (newsListObj.flag==false){
+					console.log(JSON.stringify(res));
+					newsListObj.news = res.list;
+					
+					
+					mui('#refreshContainer').pullRefresh().endPulldown();
+					page++;
+					plus.nativeUI.closeWaiting();
+				}
+				else{
+				console.log(JSON.stringify(res));
+				newsListObj.news = res.articles;
+				
+				console.log(JSON.stringify(newsListObj.news));
+				mui('#refreshContainer').pullRefresh().endPulldown();
+				page++;
+				plus.nativeUI.closeWaiting();  }  
+            },
+            error    : function(xhr,type,errorThrown){
+                mui.toast(type);
+            }
+        });
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+ });
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+};
+function getMoreNews(){
+ var _self = this;
+ // console.log(apiUrl+"article&m=articleList&page="+page+'&cate='+cate);
+ mui.getJSON(
+ // 'https://newsapi.org/v2/top-headlines?country=us&category='+mycategory[category]+'&apiKey=09f38fd0817948539d840bd426f92294&page='+page,
+  'https://newsapi.org/v2/top-headlines?country=us&category='+mycategory[category]+'&apiKey=09f38fd0817948539d840bd426f92294&q=' +kwd+ '&page=' + page,
+  
+  function(res){
+   console.log(JSON.stringify(res));
+ 
+   //判断加载完毕
+   if(res.articles == ''){
+    _self.endPullupToRefresh(true);
+
+   }else{
+    newsListObj.news = newsListObj.news.concat(res.articles);
+    page++;
+    _self.endPullupToRefresh(false);
+	//alert('dddd');
+   }
+   
+  }
+ );
+}
+//点击分类切换列表
+
+function changeCate(index){
+ category = index;
+ console.log(category);
+ getNewsList();
+}
+
+
+
+
+
+
+</script>
+</body>
+</html>

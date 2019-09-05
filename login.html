@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+	
+	
+	<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="css/mui.min.css" rel="stylesheet" />
+	<style type="text/css">
+	.news-list{padding:0; margin:0;}
+	.news-list li{display:flex; width:100%; padding:10px; background:#FFFFFF; margin-bottom:1px;}
+	.news-list-img{width:88px; flex-shrink:0;}
+	.news-list-img img{width:100%;}
+	.news-list-title{width:100%; margin:0px 10px; line-height:1.6em; font-size:15px;}
+	</style> 
+	</head>
+	
+	
+	<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title"> log in </h1>
+	</header>
+	
+	<div class="mui-content">
+		<div style="padding: 15px 0px;">
+			<form id="login-form" class="mui-input-group">
+				<div class="mui-input-row">
+					<label> account </label>
+					<input type="text" name="" id="account"  class="mui-input-clear mui-input" placeholder="please enter your account"/>
+					
+					
+				</div>
+				<div class="mui-input-row">
+					<label> keyword </label>
+					<input id="password" type="password" class="mui-input-clear" placeholder="please enter key" />	
+				</div>
+			</form>
+			
+			
+			<div id="" class="mui-content-padded">
+				<button type="button" id="loginBtn" class='mui-btn mui-btn-primary' style="width: 100%; height: 40px;">Log in</button>
+				<div style="padding: 15px 0px; font-size: 14px; text-align: center;">
+					<a id="reg"> sign up an account </a>  &nbsp; &nbsp; | &nbsp; &nbsp;
+					<a id="login_google"> gmail log in </a>
+					
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript">
+	mui.init();
+	// check if already log in  else we need sign up frist so get the reg! // 下面是注册功能点击
+	document.getElementById('reg').addEventListener('tap',function(){
+		mui.openWindow({
+			url: 'reg.html',
+			id: 'reg'
+		});
+		});
+		
+
+	// 下面是检查用户名密码交互
+	document.getElementById('loginBtn').addEventListener('tap',function(){
+		var username = document.getElementById('account').value;
+		var pwd = document.getElementById('password').value;    // 先得到dom值 然后和后台交互
+		if (username.length < 5) {
+			
+			mui.toast('your account should be longer than 5');
+			return false;
+		}
+		if (pwd.length<6){
+			mui.toast('your keyword should be longer than 6 digit');
+			return false;
+		}
+		
+	
+	console.log(username+'---'+ pwd);
+	
+	mui.ajax('http://13.59.129.23:8080/amt-news/oauth/token', {
+						data:{
+						"grant_type" : "password",
+						"username" : username,
+						"password" : pwd
+						},
+ 
+                        type: 'post',//
+                        timeout: 10000,//
+						headers:{
+							"Content-Type":"application/x-www-form-urlencoded",
+							"Authorization":"Basic YW10LWNsaWVudDphbXQtY2xpZW50LXNlY3JldA=="
+							},
+						success: function(data) {
+							console.log(JSON.stringify(data));
+			
+							 mui.toast('register successfully ^_^');
+				
+							 setTimeout(function(){
+							  plus.webview.getWebviewById('login').close();
+							  plus.webview.getWebviewById('reg').close();
+							 }, 2000);
+							},
+						error: function(xhr,type,errorThrown) {
+						    mui.toast("The server has error!");
+							mui.toast("The server has error!Please make sure your email addres is valid !!");
+                            console.log('error:' + type);
+						    
+						}
+                        /*
+                        *xhr：xhr实例对象
+                        *type：错误描述，可取值："timeout", "error", "abort", "parsererror"、"null"
+                        *errorThrown：可捕获的异常对象
+                        */
+ 
+                    });
+                    /*mui.get(url,callback(data))或mui.post(url,callback(data))是ajax的简化版
+                     * 如果要设置超时，或处理异常时，必须用mui.ajax()
+                     */
+	
+	
+	
+	
+/*
+	mui.post(
+ 	//apiUrl+'members&m=login&type=1',
+	'http://13.59.129.23:8080/amt-news/account',
+//	{username : username, password : pwd},
+	
+	{  name : "amt3",
+	email : "amt3@test.com",
+	password : "test123",
+	confirmPassword : "test123",
+	timeZone : "US/Central"},
+	function(res){
+	console.log('sasasa');
+	if(res.status == 'ok'){
+	//注册成功记录关键值同时完成登录
+	plus.storage.setItem('suid', res.data.u_id+'');
+	plus.storage.setItem('srand', res.data.u_randnum+'');
+	mui.toast('welcome ^_^');
+	//延迟2秒登录界面
+	setTimeout(function(){
+	 plus.webview.getWebviewById('login').close();
+	}, 2000);
+	}else{
+	    console.log(JSON.stringify(res));	
+		
+		
+		if(res.data=='用户不存在') { 
+			mui.toast('the username is not in our database'); 
+			return false;
+			}
+		if(res.data=='密码错误!') {
+			mui.toast('Your keyword is wrong!');  
+			return false;
+			}
+		if(res.data=='密码错误次数过多'){
+			mui.toast('you have entered too much wrong key!'); 
+			return false;
+		}
+		
+		mui.toast(res.data);
+	
+	}
+	},
+	'json'
+	);	 
+	*/
+	});
+	
+	
+	
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>  
+	
+	
+	
+	
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</body>
+</html>

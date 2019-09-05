@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	
+	
+	<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="css/mui.min.css" rel="stylesheet" />
+	<style type="text/css">
+	.news-list{padding:0; margin:0;}
+	.news-list li{display:flex; width:100%; padding:10px; background:#FFFFFF; margin-bottom:1px;}
+	.news-list-img{width:88px; flex-shrink:0;}
+	.news-list-img img{width:100%;}
+	.news-list-title{width:100%; margin:0px 10px; line-height:1.6em; font-size:15px;}
+	</style> 
+	</head>
+	
+	
+	<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title"> DIY My List </h1>
+	</header>
+	
+	
+	<div class="mui-content" id="diyList">
+	<br />
+	<div align="center">    &nbsp; MY List   <button type="button" @click="submitMylist(cate)">confirm my list</button>   </div>
+	
+	<ul class="mui-table-view">
+		
+    <li class="mui-table-view-cell" v-for="(items,index) in cate"> {{items}} 
+		<div class="mui-switch mui-switch-blue mui-switch-mini" id="vibrationSwitch">
+			<div class="mui-switch-handle"></div>
+		</div>
+        <span class="mui-badge mui-badge-primary">{{index}}</span>
+		<button @click="deleteMylist(items,index);"> delete </button>
+    </li>
+    
+	<li class="mui-table-view-cell">Item 2 
+	
+	
+
+        <span class="mui-badge mui-badge-success">22</span>
+    </li>
+    
+	<li class="mui-table-view-cell">Item 3 
+
+        <span class="mui-badge">33</span>
+    </li>
+	</ul>
+	
+	<br /> <br /> <br /> <br /> <br />
+	
+	<div>&nbsp; Click and Add To My List </div>
+	<ul class="mui-table-view" id="mySwitch">
+		
+	<li class="mui-table-view-cell" v-for="(items,index) in cateNow" v-bind:id="index" @click="addMylist(items,index);"> 
+	<div >
+		{{items}}
+	</div>
+	 
+	
+
+	<span class="mui-badge mui-badge-primary">{{index}}</span>
+	</li>
+	
+	<li class="mui-table-view-cell">Item 2 
+	    <span class="mui-badge mui-badge-success">22</span>
+	</li>
+	
+	<li class="mui-table-view-cell">Item 3 
+	    <span class="mui-badge">33</span>
+	</li>
+	</ul>
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</div>
+
+	
+
+	
+	
+		
+		
+		
+		
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			
+			document.getElementById('button').addEventListener('tap',function(){
+				mui.openWindow({            // 打开窗口对象
+					url:'index.html',
+					id: 'index'
+					
+					
+				});
+				});
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>

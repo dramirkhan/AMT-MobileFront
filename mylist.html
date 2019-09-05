@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+	
+	
+	<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="css/mui.min.css" rel="stylesheet" />
+	<style type="text/css">
+	.news-list{padding:0; margin:0;}
+	.news-list li{display:flex; width:100%; padding:10px; background:#FFFFFF; margin-bottom:1px;}
+	.news-list-img{width:88px; flex-shrink:0;}
+	.news-list-img img{width:100%;}
+	.news-list-title{width:100%; margin:0px 10px; line-height:1.6em; font-size:15px;}
+	</style> 
+	</head>
+	
+	
+	<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title"> DIY My List </h1>
+	</header>
+	
+	
+	<div class="mui-content" id="diyList">
+	<br />
+	<div align="center">    &nbsp; MY List   <button type="button" @click="submitMylist(cate)">confirm my list</button>   </div>
+	
+	<ul class="mui-table-view">
+		
+    <li class="mui-table-view-cell" v-for="(items,index) in cate"> {{items}} 
+		<div class="mui-switch mui-switch-blue mui-switch-mini" id="vibrationSwitch">
+			<div class="mui-switch-handle"></div>
+		</div>
+        <span class="mui-badge mui-badge-primary">{{index}}</span>
+		<button @click="deleteMylist(items,index);"> delete </button>
+    </li>
+    
+	<li class="mui-table-view-cell">Item 2 
+	
+	
+
+        <span class="mui-badge mui-badge-success">22</span>
+    </li>
+    
+	<li class="mui-table-view-cell">Item 3 
+
+        <span class="mui-badge">33</span>
+    </li>
+	</ul>
+	
+	<br /> <br /> <br /> <br /> <br />
+	
+	<div>&nbsp; Click and Add To My List </div>
+	<ul class="mui-table-view" id="mySwitch">
+		
+	<li class="mui-table-view-cell" v-for="(items,index) in cateNow" v-bind:id="index" @click="addMylist(items,index);"> 
+	<div >
+		{{items}}
+	</div>
+	 
+	
+
+	<span class="mui-badge mui-badge-primary">{{index}}</span>
+	</li>
+	
+	<li class="mui-table-view-cell">Item 2 
+	    <span class="mui-badge mui-badge-success">22</span>
+	</li>
+	
+	<li class="mui-table-view-cell">Item 3 
+	    <span class="mui-badge">33</span>
+	</li>
+	</ul>
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</div>
+
+	
+
+	
+	
+
+	<script src="js/mui.min.js"></script>
+	<script src="js/vue.min.js"></script>
+	<script type="text/javascript">
+
+	var cate, collectid = 0;   // 全局变量
+	
+	mui.init({
+                    beforeback: function() {　　　　
+                   
+                        var list = plus.webview.currentWebview().opener();　　　　
+                        //refresh是A页面自定义事件
+                        mui.fire(list, 'refresh1');
+                       
+                        return true;
+                    }
+                });
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	mui.plusReady(function() {
+
+                /***
+                 * 获取上一个页面所传的id值
+                 */
+                var self=plus.webview.currentWebview();//获取当前窗体对象
+                var receiveID=self.cate;//接收A页面传入的id参数值
+                console.log(JSON.stringify(receiveID));
+				console.log(receiveID[2]);
+				// diyList.cateNow=receiveID;
+				
+
+				
+
+				
+
+						 
+				
+}
+);
+ 
+	
+	mui.init();
+
+
+	
+	
+	
+	//使用vue
+	var diyList = new Vue({
+	 el: '#diyList',
+	 data: { cate : [],
+			 cateNow:["Entertainment","Business","General","Health","Science","Sports","Technology"]
+			//cateNow存储用户一个一个要加入的标签 cate保存所有加完以后总的然后给后台
+			// newsurl : []
+	 },
+	 
+	methods: {
+		addMylist : function(items,index){
+			console.log(items)
+			console.log(index)
+			this.cate.push(items)
+			// delete this.cateNow[index]
+			this.cateNow.splice(index,1);
+			
+			
+			
+		}, 
+		
+		deleteMylist: function(items,index){
+		
+			this.cateNow.push(items)	
+			this.cate.splice(index,1);	
+		},
+		
+		submitMylist: function(cate){
+			console.log(this.cateNow);
+			if (this.cateNow.length==0){
+				console.log(this.cate);
+				
+			// 数组转化为字符串
+			
+			var tmpstring=cate.join(",");
+				
+				plus.storage.setItem('diyList', tmpstring);
+				var diyList = plus.storage.getItem('diyList');
+		// diylist已经保存住了缓存 记录用户喜欢的分类顺序
+				
+				
+				
+				
+				alert('Ready? You need restart the app then you can see your diy category');
+				
+				
+				
+				/*
+						mui.openWindow({              
+						url: "index.html",
+						id : 'index',
+						createNew: true,
+						/*
+						extras : {
+							cate : this.cate,
+							// news_title: items.title
+						
+						
+						
+						}  */      // 我们把值can shu传递给子窗口
+						
+						
+						this.cate=[];
+					}
+					
+					
+					
+			
+				
+			
+
+				 
+			else {
+				mui.toast('you should sort all the categories');
+				return false;
+			}
+		}
+
+},
+	 
+	 mounted: function(){
+		mui('.mui-switch')['switch']()
+}
+
+
+
+
+	});
+	
+	document.getElementById("mySwitch").addEventListener("toggle",function(event){
+
+	//console.log(cateCurrentHtml.innerHTML);
+	var cateCurrent = this.getAttribute('title'); 
+	console.log(cateCurrent);
+  if(event.detail.isActive){
+    console.log("你启动了开关");
+  }else{
+    console.log("你关闭了开关");  
+  }
+})
+
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+		
+		
+	</script>  
+	
+	
+	
+	
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</body>
+</html>
+

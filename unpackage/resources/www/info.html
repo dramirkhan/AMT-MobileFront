@@ -1,0 +1,400 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			.comments{padding:8px; background:#FFFFFF; margin-bottom:1px; display:flex;}
+			.comments-face{width:38px; flex-shrink:0;}
+			.comments-face img{width:100%;}
+			.comments-content{line-height:1.6em; font-size:14px; padding:0px 10px; width:100%;}
+			.comments-content span{font-size:10px; color:#6D6D72;}
+			.comments-content b{font-weight:400; font-size:15px; color:#6641E2;}
+			.footer-line{height:60px; color: #2AC845;}
+			#footer{width:100%; height:50px; position:fixed; z-index:9; left:0; bottom:0; background: honeydew; display:flex; border-top:1px solid #DDDDDD;}
+			.footer-input{width:100%; height:30px; margin:9px 5px; }
+			.footer-submit{width:50px; height:30px; line-height:30px; border:1px solid #ACACB4; color: #2AC845;
+			border-radius:3px; font-size:14px; margin:9px 5px; text-align:center; flex-shrink:0;}
+			#footer textarea{height:30px; line-height:20px; width:100%; font-size:14px; padding:0px 8px;}
+
+
+		
+			
+		</style>
+		
+
+	</head>   
+	
+	<body>
+
+
+	<div id="main">
+	<header class="mui-bar mui-bar-nav">
+			
+		<h1 class="mui-title">Navbar</h1>
+		<button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left">
+			<span class="mui-icon mui-icon-left-nav"></span>
+			Index
+		</button>
+		<a class="mui-icon mui-icon-bars mui-pull-right"></a>
+	</header>
+	
+	
+		<div class="mui-content">
+			
+			
+				
+	
+	
+	
+	
+		<div v-if ='ok'>    <!-- 这个art是传过来的url 如果不写就报错不知道为啥 只能写了隐藏 -->
+  		{{art}} 
+		</div>	
+	<!-- 	<a v-bind:href="artObj.art"  > The link </a> -->
+			
+		<iframe v-bind:src="art" name="myframe" width="600" height="800" scrolling="No" frameborder="0" id="myframe" border="0" ></iframe>
+			
+			
+			
+		<div style="width:150px; height:35px; line-height:35px; border:1px solid #D1D1D1; border-radius:3px; margin:0 auto;" id="collectNow">
+		  <a id="icon-star" style="color:#666666; font-size:14px;">
+		  <span class="mui-icon mui-icon-star"></span> <span id="collectText">Love this article</span>
+		  </a>
+		</div>
+ 
+		
+		
+		<div style="height: 50px; line-height: 50px; padding: 0px 10px;">
+			The correspoding review			
+		</div>
+		
+		<div id="" style="line-height: 50px; text-align: center; color: #8F8F94;" 
+		v-bind:hidden="commentsLoadingHide">
+		{{commentsLoading}} 
+		</div>
+		
+		<div class="comments" v-for="items in comments">
+			<div class="comments-face">
+				<img v-bind:src="items.u_face" />
+			</div>
+			
+			<div>
+				<b>{{items.u_name}}</b>  <br />
+				{{items.comments_contents}}   <br />
+				<span> {{items.comments_data}}</span>
+			</div>
+			
+			
+		</div>
+		
+	</div>
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<div class="footer-line"></div>
+<div id="footer">
+ <div class="footer-input">
+  <textarea id="submitContent"></textarea>
+ </div>
+ <div class="footer-submit" id="submitBtn" >Review</div>
+</div>
+		
+		
+		
+		
+		
+		
+	
+	
+	</div>
+		
+		<script src="js/mui.js"></script>
+		<script src="js/mui.min.js"></script>
+		
+		<script src="js/vue.min.js"></script>
+		<script type="text/javascript">
+
+			var artId, collectid = 0;   // 全局变量
+			
+			mui.init();
+			
+			
+
+			
+			var artObj = new Vue({
+				el:'#main',
+				data: {
+					art:'',
+					artnumber:'',
+					ok:1+1==2,
+					artInfo : {article_title : '加载中...'},
+					comments : [],
+					commentsLoading : 'we are loading...',
+					commentsLoadingHide : false
+					
+				}
+			});
+			
+			 //用到ready事件  当H5+ 准备好之后我们需要做..... 下面的工作
+			mui.plusReady(function () {  	
+				var _self = plus.webview.currentWebview();  //  指向当前窗口的对象 拿到当前窗口
+				artId = _self.artId;  //把前面传入这里的artid拿到  get url  we use url as news id
+				news_title = _self.news_title;
+				console.log('dsdasds');
+				console.log(artId);   // 这里只要能获取前面新闻的id 就ook 
+				artObj.art =  artId;                // 吧拿到的数值给vue 变量 data
+				//xia mian kaishi极限操作!!! 将所有的artid 其实也就是url 提取出他们的数字 然后拿这个数字作为每个新闻的articleid 也是artnumber
+				// 然后去拿这个数字作为参数访问后端api 得到相应的评论 以及post发表评论 很清奇的回路乱来了!!
+				
+				var str = artId;
+				var numArr = str.match(/\d+/g)
+				console.log(numArr)  // => ["123", "456", "789"] 
+				// 也可以把拼接起来  用正则去提取所有可用数字
+				// console.log(+numArr.join('')) // => 123456789
+				if (numArr == null) {
+					artObj.artnumber = 9999999 ;  // 极限操作以后留的bug 因为极限操作就是把url转化成数字id 如果这个url本身不含有数字那么久没办法了. 所有对于这种特例 我们先全给他999999 以后再解决
+				} 
+				
+				
+				else {
+				var temid = +numArr.join('');
+
+				/*
+				if (temid.length>=11) {
+					temid=temid.substring(temid.length-10,temid.length);
+					console.log(temid);
+				}
+				*/
+				
+				
+				artObj.artnumber = temid;
+				}
+				
+				/*
+				var numArr='';
+				for (var i=0;i<artId.length;i++){
+					 var tmp = artId.charCodeAt(i);
+					 numArr=numArr + tmp;
+				}
+				
+				
+				
+				
+				console.log(numArr);
+				if (numArr.length<=9) {
+					numArr = numArr;
+				}
+				else {
+					numArr=numArr.substring(numArr.length-9,numArr.length);
+				}
+				
+				
+				artObj.artnumber=numArr;
+				
+
+				*/
+				
+			   
+			
+			// loading review
+			getComments(); 
+			
+			
+			
+				// click to review submit
+			
+			document.getElementById('submitBtn').addEventListener('tap', function(){
+				var submitContent = document.getElementById('submitContent').value;
+				var checkRes =checkLogin();				
+				if(!checkRes)  
+				   {   
+					mui.toast('You need log in at first');
+					return false;
+					}
+				
+				if(submitContent.length < 2){
+					mui.toast('You should review more');  return false;
+					}
+			
+			mui.post(                 // 把提交的评论传给服务器
+				apiUrl+'articleComments&m=submit',
+				{
+					wit_suid : checkRes[0],
+					wit_srand : checkRes[1],
+					topicid :  artObj.artnumber,   // 9999999999 是最大的范围 再大服务器不收
+					contents : submitContent
+										
+				},
+				function(res){
+					console.log(artObj.artnumber); 
+					console.log(JSON.stringify(res));
+					if (res.status == 'ok') {
+						mui.toast('Your review has submitted successfully!');
+						document.getElementById('submitContent').value = '';
+						getComments();  // 用户提交review以后 我们一边清空输入框 一边再次getComments函数得到最新的全部评论 刷新 这样用户可以马上看到自己评论
+			
+					}
+					else {
+						mui.toast('Review failure');
+					}
+				},'json'
+			
+			);
+			});
+			 
+			// 检查是否收藏
+			var suid = plus.storage.getItem('suid');
+			var srand = plus.storage.getItem('srand');
+			if(suid){
+			  mui.post(
+			  apiUrl+'articleCollects&m=isCollect',
+			  {wit_suid  : suid, wit_srand : srand, articleid : artObj.artnumber},
+			  function(res){
+				console.log(JSON.stringify(res));
+				if(res.data != 'no'){
+				document.getElementById('collectText').innerHTML = 'already loved';
+				document.getElementById('icon-star').style.color = '#007AFF';
+				collectid = res.data;
+				}
+			   },'json'
+			  );
+			 }
+			 
+			 
+			 // 点击收藏按钮
+			 
+			 document.getElementById('collectNow').addEventListener('tap', function(){
+			  //检查登录
+			  var user = checkLogin();
+			  if(!user){return false;}
+			  var txt = document.getElementById('collectText').innerHTML;
+			  if(txt == 'already loved'){
+			   //取消收藏
+			   mui.post(
+			    apiUrl+'articleCollects&m=delete',
+			    {wit_suid  : suid, wit_srand : srand, collectid : collectid},
+			    function(res){
+				console.log(collectid);
+			 	mui.toast('cancel it');
+			 	document.getElementById('collectText').innerHTML = 'Love this article';
+			 	document.getElementById('icon-star').style.color = '#666666';
+			    }
+			   );
+			  }else{
+			   //添加收藏
+			   mui.post(
+			    apiUrl+'articleCollects&m=add',
+			    {wit_suid  : suid, wit_srand : srand, articleid : artObj.artnumber},
+			    function(res){
+			 	console.log(JSON.stringify(res));
+			 	collectid = res.data;
+				
+
+				
+			 	mui.toast('love it successfully');
+			 	document.getElementById('collectText').innerHTML = 'already loved';
+			 	document.getElementById('icon-star').style.color = '#007AFF';
+				
+			    },'json'
+			   );
+			  }
+			 });
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			
+			
+			
+			
+			 
+			
+			
+			var page=1;
+			var suid = plus.storage.getItem('suid');
+			var srand = plus.storage.getItem('srand');
+			function getComments(){
+				console.log(artObj.artnumber);
+				mui.getJSON(
+					apiUrl + 'articleComments&m=getComments&topicid='+artObj.artnumber,
+					
+					function(res){
+						console.log(JSON.stringify(res));
+						
+						if (res.status == 'ok'){
+							artObj.comments = res.data;
+							// 先判断有么有评论 如果有评论 吧loading那个动画隐藏
+							artObj.commentsLoadingHide =true;
+						}
+						else{
+							artObj.commentsLoading = 'there is no review now';
+							
+						}
+					
+					}
+				
+				
+				);
+				
+				
+				
+			};
+			
+			
+			});
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		
+			
+			
+			
+			
+
+
+			
+			
+
+
+			
+			
+		</script>
+	</body>
+
+</html>

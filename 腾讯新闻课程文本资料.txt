@@ -1,0 +1,27 @@
+课程配套文本资料
+1 创建项目、部署 VUE 、入口页面布局
+http://www.hcoder.net/tutorials/info/id/1310
+2 添加子窗口完成新闻列表展示功能及界面
+http://www.hcoder.net/tutorials/info/id/1311
+3 新闻详情页面开发  
+http://www.hcoder.net/tutorials/info/id/1312
+4 新闻搜索功能开发
+http://www.hcoder.net/tutorials/info/id/1313
+5 会员登录检查函数封装，登录界面布局  
+http://www.hcoder.net/tutorials/info/id/1314
+6 完成基于账户密码的会员注册
+http://www.hcoder.net/tutorials/info/id/1315
+7 完善登录功能、“我的”页面布局
+http://www.hcoder.net/tutorials/info/id/1316
+8 完成微信登录功能
+http://www.hcoder.net/tutorials/info/id/1317
+9 完成文章详情页面的评论功能
+http://www.hcoder.net/tutorials/info/id/1318
+10 我的评论功能开发（含评论删除功能）  
+http://www.hcoder.net/tutorials/info/id/1319
+11 文章收藏功能开发
+http://www.hcoder.net/tutorials/info/id/1320
+12 混淆加密知识介绍
+http://www.hcoder.net/tutorials/info/id/1321
+13 HOA 接口数据字典分析、后端开发原理剖析
+http://www.hcoder.net/hoa/doc_362.html

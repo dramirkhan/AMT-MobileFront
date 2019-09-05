@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link href="css/mui.min.css" rel="stylesheet" />
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+ <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+ <h1 class="mui-title">register</h1>
+</header>
+<div class="mui-content">
+ <div style="padding:15px 0px;">
+  <form id='login-form' class="mui-input-group">
+   <div class="mui-input-row">
+    <label>account</label>
+    <input id='account' type="text" class="mui-input-clear mui-input" placeholder="please enter account">
+   </div>
+   <div class="mui-input-row">
+    <label>key</label>
+    <input id='password' type="password" class="mui-input-clear mui-input" placeholder="please enter key">
+   </div>
+   <div class="mui-input-row">
+    <label>your nickname</label>
+    <input id='nickname' type="text" class="mui-input-clear mui-input" placeholder="please enter your nickname">
+   </div>
+  </form>
+ </div>
+ <div class="mui-content-padded">
+  <button id='regBtn' class="mui-btn mui-btn-primary" style="width:100%; height:40px;">register</button>
+  <div style="padding:15px 0px; font-size:14px; text-align:center;">
+   <a id='login'>back to login</a>
+  </div>
+ </div>
+</div>
+
+<script src="js/mui.min.js"></script>
+<script src="js/vue.min.js"></script>
+
+<script src="js/mui.js"></script>
+<script type="text/javascript"> 
+mui.init();
+document.getElementById('login').addEventListener('tap', function(){
+	mui.back();    // 监听login 然后返回
+});
+// 监听regbtn 每个输入都要校验大于5 不然不能注册 zhi接 false
+document.getElementById('regBtn').addEventListener('tap',function(){
+	var username = document.getElementById('account').value; 
+	if (username.length < 5){
+		mui.toast('your account need at least 5 digit');
+		return false;
+	}
+	
+	var pwd = document.getElementById('password').value;
+	if(pwd.length<6){
+		mui.toast('key is at least 6 digit');
+		return false;
+
+	}
+	
+	var nickname = document.getElementById('nickname').value;
+	if (nickname.length<2){
+		mui.toast('nick name is at least 2 characters');
+		return false;		
+	}
+	
+/*
+	 //连接api 进行用户认证
+ mui.post(
+  apiUrl+'members&m=createUser&type=1',
+  {username : username, password : pwd, name : nickname},
+  function(res){
+   if(res.status == 'ok'){
+    //注册成功记录关键值同时完成登录
+    plus.storage.setItem('suid', res.data.u_id+'');
+    plus.storage.setItem('srand', res.data.u_randnum+'');     // 放在本地存储内 用户数据id
+    mui.toast('register successfully ^_^');
+    //延迟2秒关闭注册和登录界面
+    setTimeout(function(){
+     plus.webview.getWebviewById('login').close();
+     plus.webview.getWebviewById('reg').close();
+    }, 2000);
+   }else if(res.status == 'error'){
+    // mui.toast(res.data);
+	mui.toast('already exits');
+   }
+  },
+  'json'
+ );
+ */
+mui.ajax('http://13.59.129.23:8080/amt-news/account', {
+                        
+                        data: {
+							"name" : "zty5",
+							"email" : "zty5@test.com",
+							"password" : "test123",
+							"confirmPassword" : "test123",
+							"timeZone" : "US/Central"              
+                        },
+                        //dataType: 'json',
+                        /* 如果后台返回的响应内容的类型是'application/json'时,可不用指定dataType为json,
+                         * 不指定系统会根据后台响应的mime类型来得到相应的数据格式,如果此时设置为'json'反
+                         * 而会出错。
+                         * 如果后台返回的响应内容的类型是'text/plain'时,此时dataType指定为'json'时,mui
+                         * 会自动将返回的符合json格式的json字符串转换为json对象。
+                         */
+                        type: 'post',//请求方式,一般情况get和post都可以
+                        timeout: 10000,//10秒超时
+                        //success表示请求成功,返回的响应状态码为200时
+						headers:{'Content-Type':'application/json'},	              
+
+                        success: function(data) {
+							console.log(data);
+							
+                        },
+                        /*
+                        *xhr：xhr实例对象
+                        *type：错误描述，可取值："timeout", "error", "abort", "parsererror"、"null"
+                        *errorThrown：可捕获的异常对象
+                        */
+                        error: function(xhr, type, errorThrown) {
+                            mui.toast("服务器内部错误!");
+							console.log(JSON.stringify(xhr.errors));
+                            console.log('error:' + type);
+                        }
+                    });
+                    /*mui.get(url,callback(data))或mui.post(url,callback(data))是ajax的简化版
+                     * 如果要设置超时，或处理异常时，必须用mui.ajax()
+                     */
+	
+
+
+
+ 
+ 
+ 
+});
+
+//返回登录点击
+document.getElementById('login').addEventListener('tap', function(){
+ mui.back();
+});
+
+document.getElementById('reg').addEventListener('tap', function(){
+ mui.openWindow({
+  url : 'reg.html',
+  id:'reg'
+ });
+});
+
+</script>
+</body>
+</html>
+	
+	
+
+	

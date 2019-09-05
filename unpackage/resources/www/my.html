@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link href="css/mui.min.css" rel="stylesheet" />
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+ <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+ <h1 class="mui-title">My account</h1>
+</header>
+<div class="mui-content" id="account">
+ <ul class="mui-table-view mui-table-view-chevron">
+  <li class="mui-table-view-cell mui-media">
+   <img class="mui-media-object mui-pull-left head-img" id="head-img" v-bind:src="user.u_face" />
+   <div class="mui-media-body">
+    Hello {{user.u_name}}
+    <p class='mui-ellipsis'>Welcome to our American Muslim Today</p>
+   </div>
+  </li>
+ </ul>
+ <ul class="mui-table-view mui-table-view-chevron" style="margin-top:20px;">
+  <li class="mui-table-view-cell">
+   <a class="mui-navigate-right">My love news and articles</a>
+  </li>
+  <li class="mui-table-view-cell">
+   <a class="mui-navigate-right" id="mycomments">My review</a>
+  </li>
+ </ul>
+ <ul class="mui-table-view" style="margin-top:20px;">
+  <li class="mui-table-view-cell" style="text-align: center;">
+   <a id="logoff">Log out</a>
+  </li>
+ </ul>
+</div>
+<script src="js/mui.min.js"></script>
+<script src="js/vue.min.js"></script>
+<script type="text/javascript">
+//初始化会员信息
+var userObj = new Vue({
+ el : '#account',
+ data : {
+  user : []
+ }
+});
+mui.init();
+mui.plusReady(function(){
+ // setImmersedStatusbar();   // 这个是沉浸式 可以不写
+ //连接服务器获取会员信息
+ var suid = plus.storage.getItem('suid');
+ var srand = plus.storage.getItem('srand');
+ mui.post(
+  apiUrl+'members',
+  {wit_suid : suid, wit_srand : srand},
+  function(res){
+	console.log(JSON.stringify(res));
+   if(res.status == 'ok'){
+	
+    userObj.user = res.data;
+   }
+  },
+  'json'
+ );
+});
+//退出登录
+document.getElementById('logoff').addEventListener('tap', function(){
+ plus.storage.removeItem('suid');
+ plus.storage.removeItem('srand');
+ mui.toast('You have already log out!');
+ setTimeout(function(){mui.back();}, 2000);
+});
+
+
+document.getElementById('mycomments').addEventListener('tap',function(){
+	mui.openWindow({            // 打开窗口对象
+		url:'comments.html',
+		id: 'comments'
+		
+		
+	});
+	
+	
+	
+	
+});
+</script>
+</body>
+</html>
